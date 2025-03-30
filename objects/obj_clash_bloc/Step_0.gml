@@ -26,13 +26,20 @@ with (obj_clash_bloc) {
         }
     }
 }
-// === Envoi réussi vers l’adversaire ===
-if (direction == 0 && x >= 432) { // Joueur 1 → Joueur 2
-    send_to_enemy_line("J2");
+
+
+// ==========================
+// ✅ Si aucun bloc en face : envoyer au joueur adverse
+// ==========================
+
+// J1 → J2
+if (direction == 0 && x >= 432) {
+    send_to_enemy_line("J2", line_index, bloc_couleur);
     instance_destroy();
 }
 
-if (direction == 180 && x <= 16) { // Joueur 2 → Joueur 1
-    send_to_enemy_line("J1");
+// J2 → J1
+if (direction == 180 && x <= 16) {
+    send_to_enemy_line("J1", line_index, bloc_couleur);
     instance_destroy();
 }

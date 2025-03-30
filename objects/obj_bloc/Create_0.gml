@@ -1,6 +1,8 @@
 // Par défaut, tu peux initialiser des valeurs (elles pourront être modifiées après création)
 bloc_taille = 3; // 1 = 16x32, 2 = 32x32, 3 = 48x32
 bloc_couleur = "vert"; // "rouge", "vert", "bleu"
+bloc_owner = "none"; // Par défaut, ni J1 ni J2
+
 
 // Choisir le sprite en fonction de la couleur et de la taille
 if (bloc_couleur == "rouge") {
@@ -21,3 +23,7 @@ else if (bloc_couleur == "bleu") {
 
 //var pour la digestion
 digestion_timer = -1; // -1 = non actif
+
+//var game over
+danger_timer = -1;
+
