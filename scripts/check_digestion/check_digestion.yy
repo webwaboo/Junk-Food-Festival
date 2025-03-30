@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_digestion",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_digestion",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

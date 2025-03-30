@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"is_digesting_p2",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"is_digesting_p2",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

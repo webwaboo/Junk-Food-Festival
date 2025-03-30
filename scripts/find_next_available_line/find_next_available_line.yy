@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"find_next_available_line",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"find_next_available_line",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"send_to_enemy_line",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"send_to_enemy_line",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
