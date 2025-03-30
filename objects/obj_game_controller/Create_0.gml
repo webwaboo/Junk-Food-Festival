@@ -6,4 +6,7 @@
 	set_bloc_sprite(b);
 	
 	add_bloc_to_line(i, b);
-}
+}*/
+
+
+show_debug_overlay(true); // Enable the debug overlay

@@ -23,6 +23,7 @@
     {"name":"obj_grid_manager","order":13,"path":"objects/obj_grid_manager/obj_grid_manager.yy",},
     {"name":"obj_player_board","order":12,"path":"objects/obj_player_board/obj_player_board.yy",},
     {"name":"add_bloc_line","order":1,"path":"scripts/add_bloc_line/add_bloc_line.yy",},
+    {"name":"array_index_of","order":7,"path":"scripts/array_index_of/array_index_of.yy",},
     {"name":"clean_line","order":4,"path":"scripts/clean_line/clean_line.yy",},
     {"name":"move_bloc_to_line","order":3,"path":"scripts/move_bloc_to_line/move_bloc_to_line.yy",},
     {"name":"reposition_line","order":2,"path":"scripts/reposition_line/reposition_line.yy",},

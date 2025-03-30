@@ -75,8 +75,12 @@ if (keyboard_check_pressed(ord("J")) && bloc != noone) {
         clash.bloc_couleur = bloc.bloc_couleur;
         clash.line_index = ligne_index;
         clash.direction = 180; // vers la gauche
-        clash.bloc_owner = "P2";
+        clash.bloc_owner = "J2";
         clash.handled = false;
+		clash.sprite_index = bloc.sprite_index;
+		clash.image_index = bloc.image_index;
+		clash.image_xscale = bloc.image_xscale;
+		clash.image_yscale = bloc.image_yscale; // Si utile
 
         with (bloc) instance_destroy();
         reposition_line_p2(ligne_index);
@@ -90,7 +94,7 @@ if (keyboard_check_pressed(ord("H"))) {
     var b = instance_create_layer(0, 0, "Instances", obj_bloc);
     b.bloc_taille = irandom_range(1, 3);
     b.bloc_couleur = choose("rouge", "vert", "bleu");
-    b.bloc_owner = "P2";
+    b.bloc_owner = "J2";
     set_bloc_sprite(b);
     add_bloc_to_line_p2(irandom_range(0, 5), b);
 }

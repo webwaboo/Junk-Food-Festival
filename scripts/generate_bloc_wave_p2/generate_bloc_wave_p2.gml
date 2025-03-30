@@ -20,7 +20,7 @@ function generate_bloc_wave_p2() {
             var bloc = instance_create_layer(0, 0, "Instances", obj_bloc);
             bloc.bloc_taille = taille;
             bloc.bloc_couleur = choose("rouge", "vert", "bleu");
-            bloc.bloc_owner = "P2";
+            bloc.bloc_owner = "J2";
             bloc.digestion_timer = -1;
             set_bloc_sprite(bloc);
 

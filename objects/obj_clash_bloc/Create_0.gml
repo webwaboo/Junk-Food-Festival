@@ -8,3 +8,5 @@ speed = 4;
 #macro CLASH_RIGHT (CLASH_CENTER + CLASH_ZONE_HALF)
 
 handled = false; // Empêche la double collision croisée
+
+

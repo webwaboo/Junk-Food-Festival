@@ -45,6 +45,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"add_bloc_line_p2","path":"scripts/add_bloc_line_p2/add_bloc_line_p2.yy",},},
     {"id":{"name":"add_bloc_line","path":"scripts/add_bloc_line/add_bloc_line.yy",},},
+    {"id":{"name":"array_index_of","path":"scripts/array_index_of/array_index_of.yy",},},
     {"id":{"name":"check_consolidation_p2","path":"scripts/check_consolidation_p2/check_consolidation_p2.yy",},},
     {"id":{"name":"check_consolidation","path":"scripts/check_consolidation/check_consolidation.yy",},},
     {"id":{"name":"check_digestion_p2","path":"scripts/check_digestion_p2/check_digestion_p2.yy",},},

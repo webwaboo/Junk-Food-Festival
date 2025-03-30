@@ -48,7 +48,7 @@ if (!variable_instance_exists(id, "bloc_owner")) bloc_owner = "none";
 if (!variable_instance_exists(id, "danger_timer")) danger_timer = -1;
 
 // Zone de danger pour joueur 1
-if (bloc_owner == "P1" && x > 432) {
+if (bloc_owner == "J1" && x > 432) {
     if (danger_timer == -1) danger_timer = 120;
     else {
         danger_timer--;
@@ -59,7 +59,7 @@ if (bloc_owner == "P1" && x > 432) {
     }
 }
 // Zone de danger pour joueur 2
-else if (bloc_owner == "P2" && x < 16) {
+else if (bloc_owner == "J2" && x < 16) {
     if (danger_timer == -1) danger_timer = 120;
     else {
         danger_timer--;

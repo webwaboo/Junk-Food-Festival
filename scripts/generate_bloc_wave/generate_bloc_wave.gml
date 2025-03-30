@@ -21,7 +21,7 @@ function generate_bloc_wave() {
             var bloc = instance_create_layer(0, 0, "Instances", obj_bloc);
             bloc.bloc_taille = taille;
             bloc.bloc_couleur = choose("rouge", "vert", "bleu");
-            bloc.bloc_owner = "P1";
+            bloc.bloc_owner = "J1";
             bloc.digestion_timer = -1;
             set_bloc_sprite(bloc);
 

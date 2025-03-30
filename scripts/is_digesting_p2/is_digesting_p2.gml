@@ -6,14 +6,17 @@ function is_digesting_p2() {
 
     for (var i = 0; i < array_length(grid); i++) {
         var line = grid[i];
-        if (array_length(line) > 0) {
-            var first_bloc = line[array_length(line) - 1];
 
-            if (first_bloc.bloc_taille == 3 && first_bloc.digestion_timer > 0) {
-                return true; // Au moins un bloc est en digestion
+        if (array_length(line) > 0) {
+            var last_bloc = line[array_length(line) - 1];
+
+            if (instance_exists(last_bloc) &&
+                last_bloc.bloc_taille == 3 &&
+                last_bloc.digestion_timer > 0) {
+                return true; // ✅ Un bloc est en cours de digestion
             }
         }
     }
 
-    return false; // Aucun bloc digestible en cours
+    return false; // ❌ Aucun bloc en digestion
 }
