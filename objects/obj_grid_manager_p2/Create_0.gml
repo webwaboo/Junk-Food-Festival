@@ -17,7 +17,9 @@ for (var i = 0; i < 6; i++) {
     var b = instance_create_layer(0, 0, "Instances", obj_bloc);
     b.bloc_taille = irandom_range(1, 3);
     b.bloc_couleur = choose("rouge", "vert", "bleu");
+	b.bloc_owner = "J2";
     set_bloc_sprite(b);
 
     add_bloc_to_line_p2(i, b);
 }
+global.game_paused = false;

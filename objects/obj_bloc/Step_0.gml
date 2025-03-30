@@ -1,3 +1,10 @@
+if (is_game_over()) exit;
+
+
+//pause timer if there is a clash
+if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait rien
+
+
 // ==========================
 // 🔁 CLIGNOTEMENT DIGESTION
 // ==========================
@@ -27,48 +34,21 @@ if (instance_exists(manager_p2)) {
         }
     }
 }
-// Clignotement si bloc de taille 3, en digestion, en 1ère position
+
+// Clignotement digestion (prioritaire)
 if (
     bloc_taille == 3 &&
     digestion_timer > 0 &&
     digestion_timer <= 180 &&
     is_first_in_line
 ) {
-    image_alpha = 0.5 + 0.5 * sin(current_time / 150);
-} else {
-    image_alpha = 1;
+    image_alpha = 0.5 + 0.5 * sin(current_time / 150); // digestion clignote lentement
 }
-
-// ==========================
-// 💀 ZONE DE CLASH → GAME OVER
-// ==========================
-
-// Init sécurité si pas défini
-if (!variable_instance_exists(id, "bloc_owner")) bloc_owner = "none";
-if (!variable_instance_exists(id, "danger_timer")) danger_timer = -1;
-
-// Zone de danger pour joueur 1
-if (bloc_owner == "J1" && x > 432) {
-    if (danger_timer == -1) danger_timer = 120;
-    else {
-        danger_timer--;
-        if (danger_timer <= 0) {
-            show_debug_message("💀 GAME OVER J1 !");
-            // instance_create_layer(...); // Tu peux ici ajouter un objet de fin
-        }
-    }
+// Sinon, clignotement danger
+else if (danger_timer > 0) {
+    image_alpha = 0.5 + 0.5 * sin(current_time / 100); // danger clignote plus vite
 }
-// Zone de danger pour joueur 2
-else if (bloc_owner == "J2" && x < 16) {
-    if (danger_timer == -1) danger_timer = 120;
-    else {
-        danger_timer--;
-        if (danger_timer <= 0) {
-            show_debug_message("💀 GAME OVER J2 !");
-        }
-    }
-}
+// Sinon, opacité normale
 else {
-    // Bloc hors de la zone de danger → reset du timer
-    danger_timer = -1;
+    image_alpha = 1;
 }

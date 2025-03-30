@@ -1,4 +1,4 @@
-function transfer_both_to(joueur) {
+function transfer_both_to(joueur, line_index, color1, color2) {
     var grid_manager = (joueur == "J1") 
         ? instance_find(obj_grid_manager, 0)
         : instance_find(obj_grid_manager_p2, 0);
@@ -14,13 +14,13 @@ function transfer_both_to(joueur) {
     // Crée deux blocs classiques à partir des 2 clash blocs
     var bloc1 = instance_create_layer(x, y, "Instances", obj_bloc);
     bloc1.bloc_owner = joueur;
-    bloc1.bloc_couleur = bloc_couleur;
+    bloc1.bloc_couleur = color1;
     bloc1.bloc_taille = 3;
     set_bloc_sprite(bloc1);
 
     var bloc2 = instance_create_layer(other.x, other.y, "Instances", obj_bloc);
     bloc2.bloc_owner = joueur;
-    bloc2.bloc_couleur = other.bloc_couleur;
+    bloc2.bloc_couleur = color2;
     bloc2.bloc_taille = 3;
     set_bloc_sprite(bloc2);
 

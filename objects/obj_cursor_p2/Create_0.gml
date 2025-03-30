@@ -8,3 +8,4 @@ ligne_spacing = 32;
 // Find the grid manager once
 grid_manager = instance_find(obj_grid_manager_p2, 0);
 
+global.game_paused = false;

@@ -1,3 +1,8 @@
+if (is_game_over()) exit;
+
+//pause timer if there is a clash
+if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait rien
+
 // ==========================
 // 🎮 Contrôle vertical
 // ==========================

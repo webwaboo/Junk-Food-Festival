@@ -27,3 +27,4 @@ digestion_timer = -1; // -1 = non actif
 //var game over
 danger_timer = -1;
 
+global.game_paused = false;
