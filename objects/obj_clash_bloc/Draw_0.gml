@@ -22,10 +22,10 @@ draw_sprite_ext(
 	draw_set_alpha(1);
 
 	// DEBUG : affiche la zone de collision (bounding box)
-	if (show_debug_overlay(true)) {
+	/*if (show_debug_overlay(true)) {
 	    draw_set_alpha(0.4);
 	    draw_set_color(c_red);
 	    draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, false);
 	    draw_set_alpha(1);
-	}
+	}*/
 

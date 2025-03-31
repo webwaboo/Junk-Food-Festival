@@ -20,10 +20,10 @@ with (obj_clash_bloc) {
             // Calcul du point de contact
             var clash_point = (max(bbox_left, other.bbox_left) + min(bbox_right, other.bbox_right)) / 2;
 
-            /*if (clash_point < 192) {
-                transfer_both_to("J1");
+            if (clash_point < 192) {
+                transfer_both_to("J1",line_index, bloc_couleur_j2, bloc_couleur_j1);
             } else if (clash_point > 256) {
-                transfer_both_to("J2");
+                transfer_both_to("J2", line_index, bloc_couleur_j1, bloc_couleur_j2);
             } else {
                 // Zone centrale = clash
 				var clash = instance_create_layer(224, 96, "Instances", obj_clash_manager);
@@ -33,7 +33,7 @@ with (obj_clash_bloc) {
 				
 				with (id) instance_destroy();
 				with (other.id) instance_destroy();
-            }*/
+            }
         }
     }
 }
