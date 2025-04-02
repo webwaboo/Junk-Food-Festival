@@ -1,5 +1,5 @@
 // Texte du menu
-menu_title = "Partie terminée";
+menu_title = "Partie terminee";
 menu_options = ["Rejouer", "Quitter"];
 menu_index = 0; // Option sélectionnée
 
@@ -7,4 +7,3 @@ menu_index = 0; // Option sélectionnée
 menu_spacing = 32;
 menu_y_offset = 80;
 
-instance_create_layer(0, 0, "GUI", obj_menu);

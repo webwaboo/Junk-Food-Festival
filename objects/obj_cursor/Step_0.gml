@@ -112,3 +112,9 @@ if (keyboard_check_pressed(ord("G"))) {
 
     add_bloc_to_line(irandom_range(0, 5), b);
 }
+
+
+// debug game over
+if (keyboard_check_pressed(ord("B"))) {
+	instance_create_layer(room_width / 2, room_height / 2, "Instances", obj_gameover);
+}

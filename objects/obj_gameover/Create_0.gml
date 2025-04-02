@@ -2,5 +2,7 @@
 vainqueur = "J1";
 alpha = 0;
 
-//creation du menu game over
-instance_create_layer(0, 0, "Instances", obj_menu_gameover);
+if (!instance_exists(obj_menu_gameover)) {
+    instance_create_layer(room_width/2, room_height/2, "GUI", obj_menu_gameover);
+}
+
