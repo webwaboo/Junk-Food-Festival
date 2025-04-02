@@ -11,3 +11,4 @@ handled = false; // Empêche la double collision croisée
 
 
 global.game_paused = false;
+

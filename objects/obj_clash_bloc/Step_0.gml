@@ -3,6 +3,8 @@ if (is_game_over()) exit;
 //pause timer if there is a clash
 if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait rien
 
+
+
 // === Mouvement ===
 x += lengthdir_x(speed, direction);
 
@@ -19,11 +21,13 @@ with (obj_clash_bloc) {
 
             // Calcul du point de contact
             var clash_point = (max(bbox_left, other.bbox_left) + min(bbox_right, other.bbox_right)) / 2;
-
+			
+				
             if (clash_point < 192) {
-                transfer_both_to("J1",line_index, bloc_couleur_j2, bloc_couleur_j1);
+				
+                transfer_both_to("J1", line_index, other.bloc_couleur, bloc_couleur);
             } else if (clash_point > 256) {
-                transfer_both_to("J2", line_index, bloc_couleur_j1, bloc_couleur_j2);
+                transfer_both_to("J2", line_index, bloc_couleur, other.bloc_couleur);
             } else {
                 // Zone centrale = clash
 				var clash = instance_create_layer(224, 96, "Instances", obj_clash_manager);

@@ -8,3 +8,7 @@ ligne_spacing = 32;
 // Find the grid manager once
 grid_manager = instance_find(obj_grid_manager, 0);
 global.game_paused = false;
+
+//timer pour appui long
+send_hold_timer = 0;
+send_hold_threshold = 45; // 1 seconde à 60 FPS

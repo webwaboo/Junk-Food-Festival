@@ -75,10 +75,11 @@ if (bloc != noone) {
 // ==========================
 // 🚀 Envoi du bloc (touche D)
 // ==========================
-if (keyboard_check_pressed(ord("D")) && bloc != noone) {
-    if (bloc.bloc_taille == 3) {
-        var line = grid[ligne_index];
+if (keyboard_check(ord("D")) && bloc != noone) {
+    send_hold_timer++;
 
+    if (send_hold_timer == send_hold_threshold && bloc.bloc_taille == 3) {
+        var line = grid[ligne_index];
         array_delete(line, array_length(line) - 1, 1);
 
         var clash = instance_create_layer(bloc.x, bloc.y, "Instances", obj_clash_bloc);
@@ -89,16 +90,18 @@ if (keyboard_check_pressed(ord("D")) && bloc != noone) {
         clash.bloc_owner = "J1";
         clash.handled = false;
 
-		clash.sprite_index = bloc.sprite_index;
-		clash.image_index = bloc.image_index;
-		clash.image_xscale = bloc.image_xscale;
-		clash.image_yscale = bloc.image_yscale; // Si utile
-		
-        with (bloc) instance_destroy();
+        clash.sprite_index = bloc.sprite_index;
+        clash.image_index = bloc.image_index;
+        clash.image_xscale = bloc.image_xscale;
+        clash.image_yscale = bloc.image_yscale;
 
+        with (bloc) instance_destroy();
         reposition_line(ligne_index);
     }
+} else {
+    send_hold_timer = 0;
 }
+
 
 // ==========================
 // 🧪 Génération d’un bloc aléatoire (touche G)

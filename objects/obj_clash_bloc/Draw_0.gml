@@ -1,5 +1,5 @@
 //draw text placeholder
-draw_self();
+//draw_self();
 draw_text(x, y - 10, bloc_couleur);
 
 // Dessine le sprite exact du bloc source

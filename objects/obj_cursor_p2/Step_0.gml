@@ -70,8 +70,10 @@ if (bloc != noone) {
 // ==========================
 // 🚀 Envoi de bloc (touche J)
 // ==========================
-if (keyboard_check_pressed(ord("J")) && bloc != noone) {
-    if (bloc.bloc_taille == 3) {
+if (keyboard_check(ord("J")) && bloc != noone) {
+    send_hold_timer_p2++;
+
+    if (send_hold_timer_p2 == send_hold_threshold_p2 && bloc.bloc_taille == 3) {
         var line = grid[ligne_index];
         array_delete(line, 0, 1);
 
@@ -82,15 +84,19 @@ if (keyboard_check_pressed(ord("J")) && bloc != noone) {
         clash.direction = 180; // vers la gauche
         clash.bloc_owner = "J2";
         clash.handled = false;
-		clash.sprite_index = bloc.sprite_index;
-		clash.image_index = bloc.image_index;
-		clash.image_xscale = bloc.image_xscale;
-		clash.image_yscale = bloc.image_yscale; // Si utile
+
+        clash.sprite_index = bloc.sprite_index;
+        clash.image_index = bloc.image_index;
+        clash.image_xscale = bloc.image_xscale;
+        clash.image_yscale = bloc.image_yscale;
 
         with (bloc) instance_destroy();
         reposition_line_p2(ligne_index);
     }
+} else {
+    send_hold_timer_p2 = 0;
 }
+
 
 // ==========================
 // 🧪 Génération d’un bloc aléatoire (touche H)

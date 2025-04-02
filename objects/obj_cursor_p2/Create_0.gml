@@ -9,3 +9,6 @@ ligne_spacing = 32;
 grid_manager = instance_find(obj_grid_manager_p2, 0);
 
 global.game_paused = false;
+//timer pour appui long
+send_hold_timer_p2 = 0;
+send_hold_threshold_p2 = 45; // 1 seconde à 60 FPS
