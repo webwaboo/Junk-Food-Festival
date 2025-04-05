@@ -6,10 +6,10 @@ if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait ri
 // ==========================
 // 🎮 Contrôle vertical
 // ==========================
-if (keyboard_check_pressed(vk_up) && ligne_index > 0) {
+if (keyboard_check_pressed(global.controls_j1.up) && ligne_index > 0) {
     ligne_index -= 1;
 }
-if (keyboard_check_pressed(vk_down) && ligne_index < 5) {
+if (keyboard_check_pressed(global.controls_j1.down) && ligne_index < 5) {
     ligne_index += 1;
 }
 
@@ -31,13 +31,13 @@ var bloc = (array_length(current_line) > 0)
 // ==========================
 // 🧭 Déplacement vertical du bloc
 // ==========================
-if (keyboard_check_pressed(ord("W")) && bloc != noone && ligne_index > 0) {
+if (keyboard_check_pressed(global.controls_j1.bloc_up) && bloc != noone && ligne_index > 0) {
     var target = find_next_available_line(ligne_index, bloc.bloc_taille, -1);
     if (target != -1 && move_bloc_to_line(bloc, ligne_index, target)) {
         ligne_index = target;
     }
 }
-if (keyboard_check_pressed(ord("S")) && bloc != noone && ligne_index < 5) {
+if (keyboard_check_pressed(global.controls_j1.bloc_down) && bloc != noone && ligne_index < 5) {
     var target = find_next_available_line(ligne_index, bloc.bloc_taille, 1);
     if (target != -1 && move_bloc_to_line(bloc, ligne_index, target)) {
         ligne_index = target;
@@ -47,7 +47,7 @@ if (keyboard_check_pressed(ord("S")) && bloc != noone && ligne_index < 5) {
 // ==========================
 // 🧃 Envoi vers le corps (touche A)
 // ==========================
-if (keyboard_check_pressed(ord("A"))) {
+if (keyboard_check_pressed(global.controls_j1.shift)) {
     var line = grid[ligne_index];
     var count = array_length(line);
 
@@ -75,7 +75,7 @@ if (bloc != noone) {
 // ==========================
 // 🚀 Envoi du bloc (touche D)
 // ==========================
-if (keyboard_check(ord("D")) && bloc != noone) {
+if (keyboard_check(global.controls_j1.send) && bloc != noone) {
     send_hold_timer++;
 
     if (send_hold_timer == send_hold_threshold && bloc.bloc_taille == 3) {

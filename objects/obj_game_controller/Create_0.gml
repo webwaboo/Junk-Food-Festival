@@ -10,3 +10,7 @@
 
 
 //show_debug_overlay(false); // Enable the debug overlay
+
+// Create Event of obj_controller
+init_controls();
+room_goto_next(); // Move to the next room after initialization
