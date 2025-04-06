@@ -102,6 +102,7 @@
     {"id":{"name":"spr_corner_line","path":"sprites/spr_corner_line/spr_corner_line.yy",},},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
     {"id":{"name":"spr_menu_background","path":"sprites/spr_menu_background/spr_menu_background.yy",},},
+    {"id":{"name":"spr_menu_dim","path":"sprites/spr_menu_dim/spr_menu_dim.yy",},},
     {"id":{"name":"spr_top_bottom_line","path":"sprites/spr_top_bottom_line/spr_top_bottom_line.yy",},},
     {"id":{"name":"spr_tutorial_1","path":"sprites/spr_tutorial_1/spr_tutorial_1.yy",},},
     {"id":{"name":"spr_tutorial_2","path":"sprites/spr_tutorial_2/spr_tutorial_2.yy",},},

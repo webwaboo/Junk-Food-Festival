@@ -65,6 +65,7 @@
     {"name":"spr_corner_line","order":11,"path":"sprites/spr_corner_line/spr_corner_line.yy",},
     {"name":"spr_cursor","order":10,"path":"sprites/spr_cursor/spr_cursor.yy",},
     {"name":"spr_menu_background","order":13,"path":"sprites/spr_menu_background/spr_menu_background.yy",},
+    {"name":"spr_menu_dim","order":17,"path":"sprites/spr_menu_dim/spr_menu_dim.yy",},
     {"name":"spr_top_bottom_line","order":12,"path":"sprites/spr_top_bottom_line/spr_top_bottom_line.yy",},
     {"name":"spr_tutorial_1","order":14,"path":"sprites/spr_tutorial_1/spr_tutorial_1.yy",},
     {"name":"spr_tutorial_2","order":15,"path":"sprites/spr_tutorial_2/spr_tutorial_2.yy",},
