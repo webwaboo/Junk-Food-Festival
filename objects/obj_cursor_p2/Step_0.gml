@@ -8,9 +8,13 @@ if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait ri
 // ==========================
 if (keyboard_check_pressed(global.controls_j2.up) && ligne_index > 0) {
     ligne_index -= 1;
+	audio_play_sound(snd_cursor_move, 1, false);
+
 }
 if (keyboard_check_pressed(global.controls_j2.down) && ligne_index < 5) {
     ligne_index += 1;
+	audio_play_sound(snd_cursor_move, 1, false);
+
 }
 
 y = ligne_index * ligne_spacing;
@@ -30,12 +34,14 @@ if (keyboard_check_pressed(global.controls_j2.bloc_up) && bloc != noone && ligne
     var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, -1);
     if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
         ligne_index = target;
+		audio_play_sound(snd_bloc_move, 1, false);
     }
 }
 if (keyboard_check_pressed(global.controls_j2.bloc_down) && bloc != noone && ligne_index < 5) {
     var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, 1);
     if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
         ligne_index = target;
+		audio_play_sound(snd_bloc_move, 1, false);
     }
 }
 
@@ -52,6 +58,7 @@ if (keyboard_check_pressed(global.controls_j2.shift)) {
         array_insert(line, array_length(line), bloc_to_move);
         bloc_to_move.y = ligne_index * grid_manager.ligne_spacing;
         reposition_line_p2(ligne_index);
+		audio_play_sound(snd_bloc_shift, 1, false);
     }
 }
 
@@ -72,10 +79,19 @@ if (bloc != noone) {
 // ==========================
 if (keyboard_check(global.controls_j2.send) && bloc != noone) {
     send_hold_timer_p2++;
+	 if (global.sound_send_press_id2 == noone || !audio_is_playing(snd_bloc_send_press)) {
+        global.sound_send_press_id2 = audio_play_sound(snd_bloc_send_press, 1, false);
+    }
+
 
     if (send_hold_timer_p2 == send_hold_threshold_p2 && bloc.bloc_taille == 3) {
         var line = grid[ligne_index];
         array_delete(line, 0, 1);
+		if (audio_is_playing(global.sound_send_press_id2)) {
+			audio_stop_sound(global.sound_send_press_id2);
+			global.sound_send_press_id2 = noone;
+        }
+		audio_play_sound(snd_bloc_send_release, 1, false);
 
         var clash = instance_create_layer(bloc.x, bloc.y, "Instances", obj_clash_bloc);
         clash.image_xscale = bloc.bloc_taille;
@@ -95,6 +111,10 @@ if (keyboard_check(global.controls_j2.send) && bloc != noone) {
     }
 } else {
     send_hold_timer_p2 = 0;
+	if (audio_is_playing(global.sound_send_press_id2)) {
+	        audio_stop_sound(global.sound_send_press_id2);
+	        global.sound_send_press_id2 = noone;
+	    }
 }
 
 

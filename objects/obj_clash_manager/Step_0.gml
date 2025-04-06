@@ -1,12 +1,12 @@
 if (is_game_over()) exit;
 // Compte les inputs
 if (keyboard_check_pressed(ord("D"))) mash_j1++;
-if (keyboard_check_pressed(ord("J"))) mash_j2++;
+if (keyboard_check_pressed(vk_numpad4)) mash_j2++;
 
 clash_timer--;
 
 if (keyboard_check_pressed(ord("D"))) mash_j1++;
-if (keyboard_check_pressed(ord("J"))) mash_j2++;
+if (keyboard_check_pressed(vk_numpad4)) mash_j2++;
 
 clash_timer--;
 
