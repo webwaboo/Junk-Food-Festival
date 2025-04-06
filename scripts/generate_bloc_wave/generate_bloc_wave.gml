@@ -11,11 +11,11 @@ function generate_bloc_wave() {
         clean_line(line);
 
         // Calcule la taille d’un nouveau bloc aléatoire
-        var taille = choose(1, 2, 3);
+        var taille = choose(1, 2);
         var total = get_line_total(i);
 
         // Vérifie la capacité maximale
-        if (total + taille <= 12) {
+        if (total + taille <= 13) {
 
             // Créer le bloc
             var bloc = instance_create_layer(0, 0, "Instances", obj_bloc);

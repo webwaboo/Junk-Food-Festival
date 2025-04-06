@@ -11,10 +11,10 @@ function generate_bloc_wave_p2() {
         clean_line(line);
 
         // Bloc aléatoire
-        var taille = choose(1, 2, 3);
+        var taille = choose(1, 2);
         var total = get_line_total_p2(i);
 
-        if (total + taille <= 12) {
+        if (total + taille <= 13) {
 
             // Création du bloc
             var bloc = instance_create_layer(0, 0, "Instances", obj_bloc);
