@@ -7,7 +7,7 @@ menu_y_offset = 500;
 menu_spacing = 48;
 
 menu_options_main = ["Start", "Options", "Tutorial", "Quit"];
-menu_options_options = ["Controls", "Difficulty", "Back"];
+menu_options_options = ["Controls J1", "Controls J2", "Difficulty", "Back"];
 
 // === Variables nécessaires pour tutorial ===
 tutorial_page = 0;

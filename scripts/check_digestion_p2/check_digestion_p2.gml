@@ -24,6 +24,7 @@ function check_digestion_p2(line_index) {
                 array_delete(line, last_index, 1);
                 with (first_bloc) instance_destroy();
                 reposition_line_p2(line_index);
+				audio_play_sound(snd_bloc_digested, 1, false)
             }
         }
 

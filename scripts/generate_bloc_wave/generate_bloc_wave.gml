@@ -29,7 +29,7 @@ function generate_bloc_wave() {
             array_insert(line, 0, bloc);
 
             bloc.y = i * manager.ligne_spacing;
-
+			
             reposition_line(i);
             check_consolidation(i);
             check_digestion(i);

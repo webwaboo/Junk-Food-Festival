@@ -24,6 +24,7 @@ function check_digestion(line_index) {
                 array_delete(line, 0, 1); // retirer du tableau
                 with (first_bloc) instance_destroy(); // puis détruire
                 reposition_line(line_index); // réajuste visuellement
+				audio_play_sound(snd_bloc_digested, 1, false)
             }
         }
 

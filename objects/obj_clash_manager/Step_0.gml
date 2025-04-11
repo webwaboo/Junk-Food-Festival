@@ -1,14 +1,21 @@
 if (is_game_over()) exit;
 // Compte les inputs
-if (keyboard_check_pressed(ord("D"))) mash_j1++;
-if (keyboard_check_pressed(vk_numpad4)) mash_j2++;
+if (keyboard_check_pressed(global.controls_j1.send)) {
+	mash_j1++;
+	audio_play_sound(snd_clash_mash, 1, false);
+}
+if (keyboard_check_pressed(global.controls_j2.send)) {
+	mash_j2++;
+	audio_play_sound(snd_clash_mash, 1, false);
+}
+
 
 clash_timer--;
 
-if (keyboard_check_pressed(ord("D"))) mash_j1++;
+/*if (keyboard_check_pressed(ord("D"))) mash_j1++;
 if (keyboard_check_pressed(vk_numpad4)) mash_j2++;
 
-clash_timer--;
+clash_timer--;*/
 
 if (clash_timer <= 0) {
     game_paused = false;

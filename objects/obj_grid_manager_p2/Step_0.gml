@@ -16,7 +16,20 @@ if (!is_digesting_p2()) {
     bloc_timer--;
 }
 
+if (bloc_timer = 180) {
+    audio_play_sound(snd_new_line_alarm, 1, false)
+}
+
+if (bloc_timer = 120) {
+    audio_play_sound(snd_new_line_alarm, 1, false)
+}
+
+if (bloc_timer = 60) {
+    audio_play_sound(snd_new_line_alarm, 1, false)
+}
 if (bloc_timer <= 0) {
     generate_bloc_wave_p2();
     bloc_timer = bloc_timer_max;
+    audio_play_sound(snd_new_line_2, 1, false)
+
 }

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.429388,
+  "duration":2.3837187,
   "name":"snd_bloc_send_press",
   "parent":{
     "name":"Sounds",

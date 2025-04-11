@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.444082,
+  "duration":0.4,
   "name":"snd_cursor_move",
   "parent":{
     "name":"Sounds",

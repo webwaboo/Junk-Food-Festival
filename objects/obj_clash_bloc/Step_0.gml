@@ -26,14 +26,18 @@ with (obj_clash_bloc) {
             if (clash_point < 192) {
 				
                 transfer_both_to("J1", line_index, other.bloc_couleur, bloc_couleur);
+				audio_play_sound(snd_receive_bloc, 1, false);
             } else if (clash_point > 256) {
                 transfer_both_to("J2", line_index, bloc_couleur, other.bloc_couleur);
+				audio_play_sound(snd_receive_bloc, 1, false);
             } else {
                 // Zone centrale = clash
 				var clash = instance_create_layer(224, 96, "Instances", obj_clash_manager);
 				clash.line_index = line_index;
 				clash.bloc_couleur_j1 = bloc_couleur;
 				clash.bloc_couleur_j2 = other.bloc_couleur;
+				
+				audio_play_sound(snd_receive_bloc, 1, false);
 				
 				with (id) instance_destroy();
 				with (other.id) instance_destroy();
@@ -45,10 +49,12 @@ with (obj_clash_bloc) {
 // === Envoi vers l’adversaire terminé ===
 if (direction == 0 && x >= 432) { // J1 → J2
     send_to_enemy_line("J2", line_index, bloc_couleur);
+	audio_play_sound(snd_receive_bloc, 1, false);
     instance_destroy();
 }
 
 if (direction == 180 && x <= 16) { // J2 → J1
     send_to_enemy_line("J1", line_index, bloc_couleur);
+	audio_play_sound(snd_receive_bloc, 1, false);
     instance_destroy();
 }

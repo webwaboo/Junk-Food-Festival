@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":180.144,
+  "duration":180.1056,
   "name":"mus_game",
   "parent":{
     "name":"Sounds",

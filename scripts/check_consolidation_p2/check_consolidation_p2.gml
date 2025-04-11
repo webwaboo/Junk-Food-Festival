@@ -39,6 +39,7 @@ function check_consolidation_p2(line_index) {
 
                 set_bloc_sprite(new_bloc);
                 new_bloc.y = line_index * manager.ligne_spacing;
+				audio_play_sound(snd_bloc_consolidate, 1, false)
 
                 // ➕ Insert à la place de bloc1 (gauche)
                 array_insert(line, i, new_bloc);
