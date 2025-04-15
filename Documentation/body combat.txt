@@ -1,13 +1,18 @@
 versus combat body invaders
-chaque joueur a un corps composÈ de bloc
-les corps sont disposÈ de face 1 a gauche 1 a droite
-la moitiÈ est visible et on voit l'expression du visage et le corps qui gonfle quand on recoit ou donne un coup
-le but est d'envoyÈ est remplir le corps de l'autre avec les bloc de son corps
+chaque joueur a un corps composÅEde bloc
+les corps sont disposÅEde face 1 a gauche 1 a droite
+la moitiÅEest visible et on voit l'expression du visage et le corps qui gonfle quand on recoit ou donne un coup
+le but est d'envoyÅEest remplir le corps de l'autre avec les bloc de son corps
 on place le curseur sur le bloc qu'on veut envoyer on envoi le bloc en restant appuyer sur le bouton
 quand le corps est rempli a un certain pourcentage on perd
 si les 2 joueurs envoientle meme bloc au meme endroit ya un clash et faut se placer au meme endroit et bourrer A,plus on envoi de bloc plus on a de chance de l'emporter: si on perd on prend tout les blocs qui Ètaient sur la ligne
 des bonus tombent des fois du haut de l'ecran (voir details bonus), faut envoyer des blocs et ca donne souvent lieu a des clash
-les blocs sont composÈ de couleurs (rouge, jaune, bleu)
-on peut deplacer les bloc en bout de ligne en haut ou bas et les envoyer du cotÈ opposer
+les blocs sont composÅEde couleurs (rouge, jaune, bleu)
+on peut deplacer les bloc en bout de ligne en haut ou bas et les envoyer du cotÅEopposer
 pour remplir le cors ennemi il faut envoyer et "cementer" les bloc, pour ca il faut envoyer trois bloc de la meme couleur sur la meme ligne, bien sur l'adversaire peut deplacer ses blocs pour l'empecher ca remplit quand meme son corps donc faut faire attention a en renvoyer aussi
 combat 2 vs 2 avec un joueur qui s'occupe du haut, et un qui s'occupe du bas
+
+room 448*192
+640*360
+clash = 288*96
+x1=6 x2=544

@@ -28,7 +28,7 @@ function generate_bloc_wave() {
             // Ajoute le bloc à gauche (côté clash)
             array_insert(line, 0, bloc);
 
-            bloc.y = i * manager.ligne_spacing;
+            bloc.y = manager.y_start + i * manager.ligne_spacing;
 			
             reposition_line(i);
             check_consolidation(i);

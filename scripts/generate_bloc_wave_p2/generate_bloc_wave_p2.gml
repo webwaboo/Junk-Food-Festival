@@ -27,7 +27,7 @@ function generate_bloc_wave_p2() {
             // Ajout côté corps (droite chez J2 = fin de ligne)
             array_insert(line, array_length(line), bloc);
 
-            bloc.y = i * manager.ligne_spacing;
+            bloc.y = manager.y_start + i * manager.ligne_spacing;
 
             reposition_line_p2(i);
             check_consolidation_p2(i);

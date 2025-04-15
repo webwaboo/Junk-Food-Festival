@@ -36,13 +36,21 @@ function check_consolidation(line_index) {
                 new_bloc.digestion_timer = -1;
 
                 set_bloc_sprite(new_bloc);
-                new_bloc.y = line_index * manager.ligne_spacing;
+                new_bloc.y = manager.y_start + line_index * manager.ligne_spacing;
 				audio_play_sound(snd_bloc_consolidate, 1, false)
 
                 // 🔁 Insère à la position d'origine du bloc2
                 array_insert(line, i - 1, new_bloc);
 
                 reposition_line(line_index);
+				
+				// ajoute le score
+				if (manager.object_index == obj_grid_manager) {
+				    global.score_j1 += 50;
+				} else {
+				    global.score_j2 += 50;
+				}
+
 
                 return; // ✅ Une seule consolidation par appel
             }

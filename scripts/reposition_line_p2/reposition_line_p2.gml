@@ -19,7 +19,7 @@ function reposition_line_p2(line_index) {
 
         xpos -= width;
         bloc.x = xpos;
-        bloc.y = line_index * manager.ligne_spacing;
+        bloc.y = manager.y_start+ line_index * manager.ligne_spacing;
 
         xpos -= manager.bloc_spacing;
     }

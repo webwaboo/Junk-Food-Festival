@@ -30,7 +30,7 @@ function move_bloc_to_line_p2(bloc, from_line, to_line) {
     array_insert(to_array, 0, bloc);
 
     // Mise à jour visuelle
-    bloc.y = to_line * manager.ligne_spacing;
+    bloc.y = manager.y_start + to_line * manager.ligne_spacing;
 
     // Réalignement visuel
     reposition_line_p2(from_line);

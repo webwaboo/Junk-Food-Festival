@@ -2,7 +2,7 @@ if (is_game_over()) exit;
 
 //pause timer if there is a clash
 if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait rien
-
+var manager = instance_find(obj_grid_manager_p2, 0);
 // ==========================
 // 🎮 Contrôle vertical
 // ==========================
@@ -17,7 +17,7 @@ if (keyboard_check_pressed(global.controls_j2.down) && ligne_index < 5) {
 
 }
 
-y = ligne_index * ligne_spacing;
+y = manager.y_start + ligne_index * ligne_spacing;
 image_alpha = 0.5 + 0.5 * sin(current_time / 100);
 
 // ==========================
@@ -70,7 +70,7 @@ if (bloc != noone) {
     y = bloc.y;
     image_xscale = bloc.bloc_taille;
 } else {
-    x = 432; // côté droit du terrain
+    x = manager.x_start - 16; // côté droit du terrain
     image_xscale = 1;
 }
 

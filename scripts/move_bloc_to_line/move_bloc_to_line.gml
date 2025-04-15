@@ -31,7 +31,7 @@ function move_bloc_to_line(bloc, from_line, to_line) {
     array_push(to_array, bloc);
 
     // Mettre à jour la position Y
-    bloc.y = to_line * manager.ligne_spacing;
+    bloc.y = manager.y_start + to_line * manager.ligne_spacing;
 
     // Réalignement visuel
     reposition_line(from_line);

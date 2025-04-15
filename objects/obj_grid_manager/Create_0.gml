@@ -2,6 +2,11 @@ grid_lines = 6; // number of horizontal lines
 player_grid = array_create(grid_lines); // 1 array per line
 bloc_timer = 420; // 7 secondes à 60 fps
 bloc_timer_max = 420; // pour réutiliser
+// offset des elements on-screen
+x_start = 96; // ou n’importe où tu veux placer le plateau
+y_start = 96;
+
+
 
 // Create empty arrays for each line
 for (var i = 0; i < grid_lines; i++) {
@@ -10,7 +15,7 @@ for (var i = 0; i < grid_lines; i++) {
 
 // Define line spacing and left start position for blocks
 ligne_spacing = 32; 
-x_start = 0;
+//x_start = 0;
 bloc_spacing = 0;
 
 for (var i = 0; i < 6; i++) {

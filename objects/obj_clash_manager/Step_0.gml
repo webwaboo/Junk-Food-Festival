@@ -22,8 +22,12 @@ if (clash_timer <= 0) {
 
     if (mash_j1 > mash_j2) {
         transfer_both_to("J2", line_index, bloc_couleur_j1, bloc_couleur_j2);
+		//ajoute score
+		global.score_j1 += 450;
     } else if (mash_j2 > mash_j1) {
         transfer_both_to("J1", line_index, bloc_couleur_j2, bloc_couleur_j1);
+		//ajoute score
+		global.score_j2 += 450;
     } else {
         // égalité → random
         var winner = choose("J1", "J2");

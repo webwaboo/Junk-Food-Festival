@@ -68,7 +68,7 @@ else if (menu_state == "controls_p2") {
     if (waiting_for_key) {
         draw_text(display_get_gui_width() / 2, display_get_gui_height() - 64, "Appuie sur une touche...");
     } else {
-        draw_text(display_get_gui_width() / 2, display_get_gui_height() - 64, "Maintenir Entrée: changer / Échap: retour");
+        draw_text(display_get_gui_width() / 2, display_get_gui_height() - 64, "Maintenir Entree: changer / Echap: retour");
     }
     return;
 }

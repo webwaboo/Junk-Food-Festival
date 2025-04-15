@@ -9,6 +9,7 @@ function reposition_line(line_index) {
         var width = 16 * bloc.bloc_taille;
         
         bloc.x = xpos;
+		bloc.y = manager.y_start+ line_index * manager.ligne_spacing;
         xpos += width + manager.bloc_spacing;
     }
 }

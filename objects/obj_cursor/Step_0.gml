@@ -16,7 +16,7 @@ if (keyboard_check_pressed(global.controls_j1.down) && ligne_index < 5) {
 }
 
 // Position Y basée sur l’index
-y = ligne_index * ligne_spacing;
+y = grid_manager.y_start+ ligne_index * ligne_spacing;
 
 // Clignotement visuel
 image_alpha = 0.5 + 0.5 * sin(current_time / 100);

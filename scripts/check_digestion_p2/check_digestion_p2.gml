@@ -25,6 +25,12 @@ function check_digestion_p2(line_index) {
                 with (first_bloc) instance_destroy();
                 reposition_line_p2(line_index);
 				audio_play_sound(snd_bloc_digested, 1, false)
+				//ajoute le score
+				if (manager.object_index == obj_grid_manager) {
+				    global.score_j1 += 300;
+				} else {
+				    global.score_j2 += 300;
+				}
             }
         }
 
