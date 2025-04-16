@@ -14,3 +14,9 @@ send_hold_timer = 0;
 send_hold_threshold = 45; // 1 seconde à 60 FPS
 // Create Event of a controller object or initialization script
 global.sound_send_press_id = noone; // Initialize with noone (indicating no sound is playing)
+
+arrow_hold_dir = 0;
+arrow_hold_timer = 0;
+
+press_time_up = -1;
+press_time_down = -1;

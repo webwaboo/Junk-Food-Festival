@@ -81,6 +81,7 @@ else if (menu_state == "controls_p2") {
 }
 
 
+
 // === Menus classiques ===
 var options = (menu_state == "main") ? menu_options_main : menu_options_options;
 
@@ -100,6 +101,8 @@ if (keyboard_check_pressed(vk_down)) {
 		menu_index = 0;
 }
 	
+
+	
 // Sélection
 if (keyboard_check_pressed(vk_enter)) {
 	audio_play_sound(snd_select_move, 1, false);
@@ -116,7 +119,28 @@ if (keyboard_check_pressed(vk_enter)) {
         switch (selection) {
             case "Controls J1": menu_state = "controls"; menu_index = 0; break;
 			case "Controls J2": menu_state = "controls_p2"; menu_index = 0; break;
-            case "Difficulty": show_debug_message("Difficulty screen coming soon"); break;
+			case "One-Hand Mode: OFF":
+			case "One-Hand Mode: ON":
+			    global.one_hand_mode = !global.one_hand_mode; // toggle
+			    var new_label = "One-Hand Mode: " + (global.one_hand_mode ? "ON" : "OFF");
+			    menu_options_options[2] = new_label; // update label in menu
+			    break;
+
+            //case "Difficulty": show_debug_message("Difficulty screen coming soon"); break;
+			case "Difficulty: Easy":
+			case "Difficulty: Normal":
+			case "Difficulty: Hard":
+			    // Cycle vers la difficulté suivante
+			    switch (global.difficulty) {
+			        case "Easy":    global.difficulty = "Normal"; break;
+			        case "Normal":  global.difficulty = "Hard"; break;
+			        case "Hard":    global.difficulty = "Easy"; break;
+			    }
+
+		    // Met à jour l'affichage dans le menu
+		    menu_options_options[3] = "Difficulty: " + global.difficulty;
+		    break;
+
             case "Back": menu_state = "main"; menu_index = 0; break;
         }
     }

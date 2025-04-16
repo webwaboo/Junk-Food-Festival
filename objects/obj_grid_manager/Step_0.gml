@@ -16,7 +16,7 @@ if (!is_digesting()) {
 }
 
 
-if (bloc_timer = 180) {
+/*if (bloc_timer = 180) {
     audio_play_sound(snd_new_line_alarm, 1, false)
 }
 
@@ -26,7 +26,7 @@ if (bloc_timer = 120) {
 
 if (bloc_timer = 60) {
     audio_play_sound(snd_new_line_alarm, 1, false)
-}
+}*/
 
 if (bloc_timer <= 0) {
     generate_bloc_wave();

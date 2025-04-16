@@ -1,9 +1,13 @@
 grid_lines = 6; // number of horizontal lines
 player_grid = array_create(grid_lines); // 1 array per line
-bloc_timer = 420; // 7 secondes à 60 fps
-bloc_timer_max = 420; // pour réutiliser
+switch (global.difficulty) {
+    case "Easy":    bloc_timer_max = game_get_speed(gamespeed_fps) * 7; break;
+    case "Normal":  bloc_timer_max = game_get_speed(gamespeed_fps) * 4; break;
+    case "Hard":    bloc_timer_max = game_get_speed(gamespeed_fps) * 2; break;
+}
+bloc_timer = bloc_timer_max
+
 // offset des elements on-screen
-//x_start = 96; // ou n’importe où tu veux placer le plateau
 y_start = 96;
 
 // Create empty arrays for each line
