@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_bangers",
+  "%Name":"fnt_bangers_medium",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":28,
@@ -118,7 +118,7 @@
   "last":0,
   "lineHeight":34,
   "maintainGms1Font":false,
-  "name":"fnt_bangers",
+  "name":"fnt_bangers_medium",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",

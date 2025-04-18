@@ -1,3 +1,5 @@
+if (is_game_over()) exit;
+
 if (!global.game_paused) {
     timer_frame++;
 

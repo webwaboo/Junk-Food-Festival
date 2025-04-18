@@ -12,15 +12,15 @@ var bx2 = x + 100;
 var by2 = y + 90;
 
 draw_set_color(c_white); // Couleur de texte/bouton
-draw_set_font(-1)
+draw_set_font(fnt_bangers_medium);
 
 // Affiche le titre du menu (facultatif)
-draw_text(room_width / 2, menu_y_offset, menu_title);
+//draw_text(room_width / 2, menu_y_offset+150, menu_title);
 
 // Affiche les options du menu (facultatif si tu utilises que "Rejouer")
 for (var i = 0; i < array_length(menu_options); i++) {
     var text = menu_options[i];
-    var ypos = menu_y_offset + 48 + i * menu_spacing;
+    var ypos = menu_y_offset + 100 + i * menu_spacing;
     
     if (i == menu_index) {
         draw_text(room_width / 2, ypos, "> " + text + " <");

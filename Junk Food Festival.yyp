@@ -35,6 +35,7 @@
   },
   "name":"Junk Food Festival",
   "resources":[
+    {"id":{"name":"fnt_bangers_medium","path":"fonts/fnt_bangers_medium/fnt_bangers_medium.yy",},},
     {"id":{"name":"fnt_bangers","path":"fonts/fnt_bangers/fnt_bangers.yy",},},
     {"id":{"name":"fnt_large","path":"fonts/fnt_large/fnt_large.yy",},},
     {"id":{"name":"obj_bloc","path":"objects/obj_bloc/obj_bloc.yy",},},
