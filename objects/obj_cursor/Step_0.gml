@@ -6,11 +6,11 @@ if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait ri
 // ==========================
 // 🎮 Contrôle vertical
 // ==========================
-if (keyboard_check_pressed(global.controls_j1.up) || gamepad_button_check_pressed(0, gp_padu) && ligne_index > 0) {
+if (keyboard_check_pressed(global.controls_j1.up) && ligne_index > 0 || gamepad_button_check_pressed(0, gp_padu) && ligne_index > 0) {
     ligne_index -= 1;
 	audio_play_sound(snd_cursor_move, 1, false);
 }
-if (keyboard_check_pressed(global.controls_j1.down) || gamepad_button_check_pressed(0, gp_padd) && ligne_index < 5) {
+if (keyboard_check_pressed(global.controls_j1.down) && ligne_index < 5 || gamepad_button_check_pressed(0, gp_padd) && ligne_index < 5) {
     ligne_index += 1;
 	audio_play_sound(snd_cursor_move, 1, false);
 }
