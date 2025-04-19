@@ -33,7 +33,7 @@ var bloc = (array_length(current_line) > 0)
 // ==========================
 // 🧭 Déplacement vertical du bloc
 // ==========================
-if (keyboard_check_pressed(global.controls_j1.bloc_up)|| gamepad_button_check_pressed(0, gp_face4) && bloc != noone && ligne_index > 0) {
+if (keyboard_check_pressed(global.controls_j1.bloc_up) && bloc != noone && ligne_index > 0 || gamepad_button_check_pressed(0, gp_face4) && bloc != noone && ligne_index > 0) {
     var target = find_next_available_line(ligne_index, bloc.bloc_taille, -1);
     if (target != -1 && move_bloc_to_line(bloc, ligne_index, target)) {
         ligne_index = target;
@@ -41,7 +41,7 @@ if (keyboard_check_pressed(global.controls_j1.bloc_up)|| gamepad_button_check_pr
 
     }
 }
-if (keyboard_check_pressed(global.controls_j1.bloc_down)|| gamepad_button_check_pressed(0, gp_face1) && bloc != noone && ligne_index < 5) {
+if (keyboard_check_pressed(global.controls_j1.bloc_down) && bloc != noone && ligne_index < 5 || gamepad_button_check_pressed(0, gp_face1) && bloc != noone && ligne_index < 5) {
     var target = find_next_available_line(ligne_index, bloc.bloc_taille, 1);
     if (target != -1 && move_bloc_to_line(bloc, ligne_index, target)) {
         ligne_index = target;
@@ -52,7 +52,7 @@ if (keyboard_check_pressed(global.controls_j1.bloc_down)|| gamepad_button_check_
 // ==========================
 // 🧃 Envoi vers le corps (touche A)
 // ==========================
-if (keyboard_check_pressed(global.controls_j1.shift)|| gamepad_button_check_pressed(0, gp_face3)) {
+if (keyboard_check_pressed(global.controls_j1.shift) || gamepad_button_check_pressed(0, gp_face3)) {
     var line = grid[ligne_index];
     var count = array_length(line);
 
@@ -81,7 +81,7 @@ if (bloc != noone) {
 // ==========================
 // 🚀 Envoi du bloc (touche D)
 // ==========================
-if (keyboard_check(global.controls_j1.send) || gamepad_button_check(0, gp_face2) && bloc != noone) {
+if (keyboard_check(global.controls_j1.send) && bloc != noone || gamepad_button_check(0, gp_face2) && bloc != noone) {
     send_hold_timer++;
  if (global.sound_send_press_id == noone || !audio_is_playing(snd_bloc_send_press)) {
         global.sound_send_press_id = audio_play_sound(snd_bloc_send_press, 1, false);

@@ -6,12 +6,12 @@ var manager = instance_find(obj_grid_manager_p2, 0);
 // ==========================
 // 🎮 Contrôle vertical
 // ==========================
-if (keyboard_check_pressed(global.controls_j2.up) && ligne_index > 0) {
+if (keyboard_check_pressed(global.controls_j2.up) && ligne_index > 0 || gamepad_button_check_pressed(1, gp_padu) && ligne_index > 0) {
     ligne_index -= 1;
 	audio_play_sound(snd_cursor_move, 1, false);
 
 }
-if (keyboard_check_pressed(global.controls_j2.down) && ligne_index < 5) {
+if (keyboard_check_pressed(global.controls_j2.down) && ligne_index < 5 && ligne_index < 5 || gamepad_button_check_pressed(1, gp_padd) && ligne_index < 5) {
     ligne_index += 1;
 	audio_play_sound(snd_cursor_move, 1, false);
 
@@ -30,14 +30,14 @@ var bloc = (array_length(current_line) > 0) ? current_line[0] : noone;
 // ==========================
 // 🧭 Déplacement vertical du bloc
 // ==========================
-if (keyboard_check_pressed(global.controls_j2.bloc_up) && bloc != noone && ligne_index > 0) {
+if (keyboard_check_pressed(global.controls_j2.bloc_up) && bloc != noone && ligne_index > 0 || gamepad_button_check_pressed(1, gp_face4) && bloc != noone && ligne_index > 0) {
     var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, -1);
     if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
         ligne_index = target;
 		audio_play_sound(snd_bloc_move, 1, false);
     }
 }
-if (keyboard_check_pressed(global.controls_j2.bloc_down) && bloc != noone && ligne_index < 5) {
+if (keyboard_check_pressed(global.controls_j2.bloc_down) && bloc != noone && ligne_index < 5 || gamepad_button_check_pressed(1, gp_face1) && bloc != noone && ligne_index < 5) {
     var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, 1);
     if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
         ligne_index = target;
@@ -48,7 +48,7 @@ if (keyboard_check_pressed(global.controls_j2.bloc_down) && bloc != noone && lig
 // ==========================
 // 🧃 Envoyer un bloc vers le corps (touche L)
 // ==========================
-if (keyboard_check_pressed(global.controls_j2.shift)) {
+if (keyboard_check_pressed(global.controls_j2.shift) || gamepad_button_check_pressed(1, gp_face2)) {
     var line = grid[ligne_index];
     var count = array_length(line);
 
@@ -75,9 +75,9 @@ if (bloc != noone) {
 }
 
 // ==========================
-// 🚀 Envoi de bloc (touche J)
+// 🚀 Envoi de bloc (touche J4
 // ==========================
-if (keyboard_check(global.controls_j2.send) && bloc != noone) {
+if (keyboard_check(global.controls_j2.send) && bloc != noone || gamepad_button_check(1, gp_face3) && bloc != noone) {
     send_hold_timer_p2++;
 	 if (global.sound_send_press_id2 == noone || !audio_is_playing(snd_bloc_send_press)) {
         global.sound_send_press_id2 = audio_play_sound(snd_bloc_send_press, 1, false);
