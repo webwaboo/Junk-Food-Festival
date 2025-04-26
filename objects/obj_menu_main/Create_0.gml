@@ -6,8 +6,8 @@ menu_index = 0;
 menu_y_offset = 500;
 menu_spacing = 48;
 
-menu_options_main = ["Start", "Options", "Tutorial", "Quit"];
-menu_options_options = ["Controls J1", "Controls J2","One-Hand Mode: OFF", "Difficulty: Easy", "Back"];
+menu_options_main = ["Start", "Options", "Tutorial", "Credits", "Quit"];
+menu_options_options = ["Controls J1", "Controls J2", "Difficulty: Easy", "Back"];
 
 
 // === Variables nécessaires pour tutorial ===

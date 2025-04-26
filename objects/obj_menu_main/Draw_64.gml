@@ -77,8 +77,8 @@ else if (menu_state == "controls_p2") {
 // === MAIN & OPTIONS MENU ===
 draw_set_color(c_green);
 
-var title = (menu_state == "main") ? "🍔 Junk Food Festival 🍟" : "Options";
-draw_text(display_get_gui_width() / 2, 425, title);
+var title = (menu_state == "main") ? "Junk Food Festival" : "Options";
+scribble("[fnt_bangers][fa_center][fa_top][spr_bonus,0][c_green][wave]"+string(title)+"[][spr_bonus,0]").draw(display_get_gui_width() / 2, 425); //draw_text(display_get_gui_width() / 2, 425, title);
 
 var options = (menu_state == "main") ? menu_options_main : menu_options_options;
 
@@ -87,8 +87,8 @@ for (var i = 0; i < array_length(options); i++) {
     var y_pos = menu_y_offset + i * menu_spacing;
 
     if (i == menu_index) {
-        draw_text(display_get_gui_width() / 2, y_pos, "> " + txt + " <");
+        scribble( "[fnt_bangers][fa_center][fa_top][c_red][pulse]> " + string(txt) + " <").draw(display_get_gui_width() / 2, y_pos); //draw_text(display_get_gui_width() / 2, y_pos, "> " + txt + " <");
     } else {
-        draw_text(display_get_gui_width() / 2, y_pos, txt);
+        scribble( "[fnt_bangers][fa_center][fa_top][c_green]" + string(txt)).draw(display_get_gui_width() / 2, y_pos);//draw_text(display_get_gui_width() / 2, y_pos, txt);
     }
 }

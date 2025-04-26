@@ -113,17 +113,18 @@ if (keyboard_check_pressed(vk_enter)) {
             case "Start": room_goto(rm_main_game); break;
             case "Options": menu_state = "options"; menu_index = 0; break;
             case "Tutorial": menu_state = "tutorial"; menu_index = 0; break;
+			case "Credits": room_goto(rm_credits); break;
             case "Quit": game_end(); break;
         }
     } else if (menu_state == "options") {
         switch (selection) {
             case "Controls J1": menu_state = "controls"; menu_index = 0; break;
 			case "Controls J2": menu_state = "controls_p2"; menu_index = 0; break;
-			case "One-Hand Mode: OFF":
+			/*case "One-Hand Mode: OFF":
 			case "One-Hand Mode: ON":
 			    global.one_hand_mode = !global.one_hand_mode; // toggle
 			    var new_label = "One-Hand Mode: " + (global.one_hand_mode ? "ON" : "OFF");
-			    menu_options_options[2] = new_label; // update label in menu
+			    menu_options_options[2] = new_label; // update label in menu*/
 			    break;
 
             //case "Difficulty": show_debug_message("Difficulty screen coming soon"); break;
