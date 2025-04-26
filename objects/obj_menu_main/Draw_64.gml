@@ -78,7 +78,7 @@ else if (menu_state == "controls_p2") {
 draw_set_color(c_green);
 
 var title = (menu_state == "main") ? "Junk Food Festival" : "Options";
-scribble("[fnt_bangers][fa_center][fa_top][spr_bonus,0][c_green][wave]"+string(title)+"[][spr_bonus,0]").draw(display_get_gui_width() / 2, 425); //draw_text(display_get_gui_width() / 2, 425, title);
+scribble("[fnt_bangers][fa_center][fa_top][spr_popcorn,0][c_green][wave]"+string(title)+"[][spr_burger,0]").draw(display_get_gui_width() / 2, 425); //draw_text(display_get_gui_width() / 2, 425, title);
 
 var options = (menu_state == "main") ? menu_options_main : menu_options_options;
 
