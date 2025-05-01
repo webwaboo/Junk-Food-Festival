@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"tuto_mechanic_enabled",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tuto_mechanic_enabled",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

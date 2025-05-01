@@ -1,0 +1,1 @@
+global.tutorial_mode = (string_starts_with(room_get_name(room), "rm_tuto_"));
