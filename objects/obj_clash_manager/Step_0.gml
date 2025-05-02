@@ -1,4 +1,7 @@
+//check if gameover or paused
+if (global.game_paused) exit;
 if (is_game_over()) exit;
+
 // Compte les inputs
 if (keyboard_check_pressed(global.controls_j1.send)) {
 	mash_j1++;

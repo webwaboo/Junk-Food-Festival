@@ -1,4 +1,7 @@
+//check if gameover or paused
+if (global.game_paused) exit;
 if (is_game_over()) exit;
+
 //check if in tutorial
 if (global.tutorial_mode) {
     var t = instance_find(obj_tutorial_manager, 0);

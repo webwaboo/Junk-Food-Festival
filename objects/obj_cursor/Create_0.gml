@@ -1,5 +1,9 @@
 // Position de départ (ligne 0)
-ligne_index = 0;
+if(room = rm_tuto_1){
+	ligne_index = 2;
+} else {
+	ligne_index = 0;
+}
 
 // Distance entre les lignes (en pixels)
 ligne_spacing = 32;

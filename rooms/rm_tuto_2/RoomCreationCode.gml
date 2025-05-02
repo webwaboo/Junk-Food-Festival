@@ -1,2 +1,2 @@
 
-play_music(mus_game);
+play_music(mus_training_room);

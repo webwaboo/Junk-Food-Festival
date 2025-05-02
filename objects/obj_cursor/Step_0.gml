@@ -1,4 +1,7 @@
+//check if gameover or paused
+if (global.game_paused) exit;
 if (is_game_over()) exit;
+
 //check if in tutorial
 if (global.tutorial_mode) {
     var t = instance_find(obj_tutorial_manager, 0);
@@ -269,6 +272,6 @@ if (keyboard_check_pressed(ord("B"))) {
 }
 
 //This shall display a pause menu
-if (keyboard_check_pressed(vk_escape)) {
+/*if (keyboard_check_pressed(vk_escape)) {
     room_goto(rm_menu)
-}
+}*/
