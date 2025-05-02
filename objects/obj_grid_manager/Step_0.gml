@@ -7,16 +7,20 @@ if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait ri
 for (var i = 0; i < grid_lines; i++) {
 	if (!tuto_mechanic_enabled("consolidation")) {
         check_consolidation(i);
-
-}
-    check_digestion(i);
+	}
+	if (!tuto_mechanic_enabled("digestion")) {
+		check_digestion(i);
+	}   
 	check_game_over(i, "J1");
 }
 
 // === Gestion du timer de vague de blocs ===
-if (!is_digesting()) {
-    bloc_timer--;
-}
+if (!tuto_mechanic_enabled("digestion")) {
+	if (!is_digesting()) {
+		bloc_timer--;
+	}
+} 
+
 
 
 /*if (bloc_timer = 180) {
