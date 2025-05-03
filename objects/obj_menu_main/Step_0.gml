@@ -112,7 +112,7 @@ if (keyboard_check_pressed(vk_enter)) {
         switch (selection) {
             case "Start": room_goto(rm_main_game); break;
             case "Options": menu_state = "options"; menu_index = 0; break;
-            case "Tutorial": room_goto(rm_tuto_7)/*menu_state = "tutorial"; menu_index = 0*/; break;
+            case "Tutorial": room_goto(rm_tuto_8)/*menu_state = "tutorial"; menu_index = 0*/; break;
 			case "Credits": room_goto(rm_credits); break;
             case "Quit": game_end(); break;
         }

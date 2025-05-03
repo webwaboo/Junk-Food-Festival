@@ -8,15 +8,17 @@ var manager = instance_find(obj_grid_manager_p2, 0);
 // ==========================
 // 🎮 Contrôle vertical
 // ==========================
-if (keyboard_check_pressed(global.controls_j2.up) && ligne_index > 0 || gamepad_button_check_pressed(1, gp_padu) && ligne_index > 0) {
-    ligne_index -= 1;
-	audio_play_sound(snd_cursor_move, 1, false);
+if (!tuto_mechanic_enabled("cursor_move")) {
+	if (keyboard_check_pressed(global.controls_j2.up) && ligne_index > 0 || gamepad_button_check_pressed(1, gp_padu) && ligne_index > 0) {
+	    ligne_index -= 1;
+		audio_play_sound(snd_cursor_move, 1, false);
 
-}
-if (keyboard_check_pressed(global.controls_j2.down) && ligne_index < 5 && ligne_index < 5 || gamepad_button_check_pressed(1, gp_padd) && ligne_index < 5) {
-    ligne_index += 1;
-	audio_play_sound(snd_cursor_move, 1, false);
+	}
+	if (keyboard_check_pressed(global.controls_j2.down) && ligne_index < 5 && ligne_index < 5 || gamepad_button_check_pressed(1, gp_padd) && ligne_index < 5) {
+	    ligne_index += 1;
+		audio_play_sound(snd_cursor_move, 1, false);
 
+	}
 }
 
 y = manager.y_start + ligne_index * ligne_spacing;
@@ -32,19 +34,21 @@ var bloc = (array_length(current_line) > 0) ? current_line[0] : noone;
 // ==========================
 // 🧭 Déplacement vertical du bloc
 // ==========================
-if (keyboard_check_pressed(global.controls_j2.bloc_up) && bloc != noone && ligne_index > 0 || gamepad_button_check_pressed(1, gp_face4) && bloc != noone && ligne_index > 0) {
-    var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, -1);
-    if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
-        ligne_index = target;
-		audio_play_sound(snd_bloc_move, 1, false);
-    }
-}
-if (keyboard_check_pressed(global.controls_j2.bloc_down) && bloc != noone && ligne_index < 5 || gamepad_button_check_pressed(1, gp_face1) && bloc != noone && ligne_index < 5) {
-    var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, 1);
-    if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
-        ligne_index = target;
-		audio_play_sound(snd_bloc_move, 1, false);
-    }
+if (!tuto_mechanic_enabled("bloc_move")) {
+	if (keyboard_check_pressed(global.controls_j2.bloc_up) && bloc != noone && ligne_index > 0 || gamepad_button_check_pressed(1, gp_face4) && bloc != noone && ligne_index > 0) {
+	    var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, -1);
+	    if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
+	        ligne_index = target;
+			audio_play_sound(snd_bloc_move, 1, false);
+	    }
+	}
+	if (keyboard_check_pressed(global.controls_j2.bloc_down) && bloc != noone && ligne_index < 5 || gamepad_button_check_pressed(1, gp_face1) && bloc != noone && ligne_index < 5) {
+	    var target = find_next_available_line_p2(ligne_index, bloc.bloc_taille, 1);
+	    if (target != -1 && move_bloc_to_line_p2(bloc, ligne_index, target)) {
+	        ligne_index = target;
+			audio_play_sound(snd_bloc_move, 1, false);
+	    }
+	}
 }
 
 // ==========================

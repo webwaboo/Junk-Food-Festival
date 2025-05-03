@@ -113,10 +113,84 @@ function tuto_victory() {
 			
 		case rm_tuto_7:
 			return global.score_j1 >= 500;
-
-
-		// Ajoute les autres niveaux ici (rm_tuto_3, etc.)
 		
+		case rm_tuto_8:
+			{
+			    // On vérifie si le clash a eu lieu
+			    var clash_triggered = variable_global_exists("clash_occurred") && global.clash_occurred;
+
+			    // Comptage des blocs de taille 3 chez chaque joueur
+			    var count_j1 = 0;
+			    var count_j2 = 0;
+
+			    var grid_j1 = instance_exists(obj_grid_manager) ? obj_grid_manager.player_grid : [];
+			    var grid_j2 = instance_exists(obj_grid_manager_p2) ? obj_grid_manager_p2.player_grid : [];
+
+			    for (var i = 0; i < array_length(grid_j1); i++) {
+			        var line = grid_j1[i];
+			        for (var b = 0; b < array_length(line); b++) {
+			            var bloc = line[b];
+			            if (bloc.bloc_taille == 3 && bloc.bloc_owner == "J1") count_j1++;
+			        }
+			    }
+
+			    for (var i = 0; i < array_length(grid_j2); i++) {
+			        var line = grid_j2[i];
+			        for (var b = 0; b < array_length(line); b++) {
+			            var bloc = line[b];
+			            if (bloc.bloc_taille == 3 && bloc.bloc_owner == "J2") count_j2++;
+			        }
+			    }
+
+			    // Victoire seulement si le clash a eu lieu ET que J2 a reçu les 2 blocs
+			    if (clash_triggered && count_j2 >= 2) {
+			        return true;
+			    }
+
+			    // Échec si J1 a récupéré les blocs OU si J2 a 2 blocs sans clash
+			    if (count_j1 >= 2 || (count_j2 >= 2 && !clash_triggered)) {
+			        room_restart();
+			    }
+
+			    return false;
+			}
+	
+		case rm_tuto_9:
+		    var score_j1 = global.score_j1;
+		    var score_j2 = global.score_j2;
+
+		    // Le jeu est déjà gagné ?
+		    if (score_j1 >= 15000 && score_j1 > score_j2) return true;
+
+		    // Obésité J2 détectée (zone de danger)
+		    var manager = instance_find(obj_grid_manager_p2, 0);
+		    if (instance_exists(manager)) {
+		        var grid = manager.player_grid;
+		        for (var i = 0; i < array_length(grid); i++) {
+		            var line = grid[i];
+		            var total = 0;
+		            for (var j = 0; j < array_length(line); j++) {
+		                if (instance_exists(line[j])) {
+		                    total += line[j].bloc_taille;
+		                }
+		            }
+		            if (total > 12) {
+		                if (!variable_global_exists("tuto_timer_reset")) {
+		                    global.tuto_timer_reset = game_get_speed(gamespeed_fps) * 10; // 10 sec
+		                } else {
+		                    global.tuto_timer_reset--;
+		                    if (global.tuto_timer_reset <= 0) return true;
+		                }
+		            }
+		        }
+		    }
+
+		    // Fin de temps : score supérieur
+		    if (global.tuto_round_timer <= 0) {
+		        return score_j1 > score_j2;
+		    }
+
+		    return false;
 
     }
 

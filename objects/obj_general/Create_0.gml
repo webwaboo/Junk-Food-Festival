@@ -1,1 +1,2 @@
- global.game_paused = false;
+global.game_paused = false;
+

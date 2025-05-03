@@ -3,12 +3,12 @@ if (global.game_paused) exit;
 if (is_game_over()) exit;
 
 //check if in tutorial
-if (global.tutorial_mode) {
+/*if (global.tutorial_mode) {
     var t = instance_find(obj_tutorial_manager, 0);
     if (instance_exists(t) && !t.controls_enabled.cursor) {
         exit;
     }
-}
+}*/
 
 //pause timer if there is a clash
 if (instance_exists(obj_clash_manager)) return; // clash actif → on ne fait rien

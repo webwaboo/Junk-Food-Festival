@@ -1,5 +1,5 @@
 // Position de départ (ligne 0)
-if(room = rm_tuto_1){
+if(room = rm_tuto_1 || room = rm_tuto_8){
 	ligne_index = 2;
 } else {
 	ligne_index = 0;
