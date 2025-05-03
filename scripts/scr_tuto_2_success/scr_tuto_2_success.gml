@@ -1,14 +1,24 @@
 function scr_tuto_2_success() {
-    var cursor = instance_find(obj_cursor, 0);
-    if (!instance_exists(cursor)) return false;
 
-    if (!variable_instance_exists(cursor, "visited_top")) {
-        cursor.visited_top = false;
-        cursor.visited_bottom = false;
+var top_reached = false;
+var bottom_reached = false;
+
+var manager = instance_find(obj_grid_manager, 0);
+if (instance_exists(manager)) {
+    var grid = manager.player_grid;
+    for (var i = 0; i < array_length(grid); i++) {
+        var line = grid[i];
+        for (var j = 0; j < array_length(line); j++) {
+            var bloc = line[j];
+            if (!instance_exists(bloc)) continue;
+            if (bloc.bloc_owner == "J1") {
+                if (i == 0) top_reached = true;
+                if (i == array_length(grid) - 1) bottom_reached = true;
+            }
+        }
     }
+}
 
-    if (cursor.ligne_index == 0) cursor.visited_top = true;
-    if (cursor.ligne_index == 5) cursor.visited_bottom = true;
+return top_reached && bottom_reached;
 
-    return cursor.visited_top && cursor.visited_bottom;
 }

@@ -45,12 +45,13 @@ function check_consolidation(line_index) {
                 reposition_line(line_index);
 				
 				// ajoute le score
-				if (manager.object_index == obj_grid_manager) {
-				    global.score_j1 += 50;
-				} else {
-				    global.score_j2 += 50;
+				if (!tuto_mechanic_enabled("score")) {
+					if (manager.object_index == obj_grid_manager) {
+					    global.score_j1 += 50;
+					} else {
+					    global.score_j2 += 50;
+					}
 				}
-
 
                 return; // ✅ Une seule consolidation par appel
             }

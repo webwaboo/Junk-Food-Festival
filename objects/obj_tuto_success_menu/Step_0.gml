@@ -20,7 +20,15 @@ if (keyboard_check_pressed(vk_enter)) {
     
     switch (choice) {
         case "Next Level":
-            room_goto_next();
+            var next_room = room_next(room);
+			//chexk next rom exist else gack to main menu
+			if (next_room != -1) {
+				room_goto(next_room);
+			} else {
+				// Fallback si aucune room suivante
+				room_goto(rm_menu);
+			}
+
             break;
         case "Retry":
             room_restart();
