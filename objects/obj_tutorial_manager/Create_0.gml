@@ -104,15 +104,15 @@ switch (room) {
 
 	case rm_tuto_9:
 	    consigne = "Win the round!";
-	    explication = "Score 15000, make your opponent obese, or have the higher score after 99s.";
+	    explication = "Score 15000, make your opponent obese, or have the higher score after 15s.";
 	    controls_enabled = {
 	        cursor: true,
 	        bloc_move: true,
 	        send: true,
 	        shift: true
 	    };
-	    global.tuto_round_timer = game_get_speed(gamespeed_fps) * 10; // 10 sec
-	    global.tuto_timer_reset = undefined;
+	    global.tuto_round_timer = game_get_speed(gamespeed_fps) * 15; // 10 sec
+	    global.tuto_timer_reset = 15;
 	    success_check = tuto_victory;
 	    break;
 

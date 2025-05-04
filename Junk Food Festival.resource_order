@@ -460,8 +460,6 @@
     {"name":"reposition_line","order":2,"path":"scripts/reposition_line/reposition_line.yy",},
     {"name":"restart_game","order":10,"path":"scripts/restart_game/restart_game.yy",},
     {"name":"save_controls","order":13,"path":"scripts/save_controls/save_controls.yy",},
-    {"name":"scr_tuto_1_success","order":16,"path":"scripts/scr_tuto_1_success/scr_tuto_1_success.yy",},
-    {"name":"scr_tuto_2_success","order":17,"path":"scripts/scr_tuto_2_success/scr_tuto_2_success.yy",},
     {"name":"scribble_anim_cycle","order":1,"path":"scripts/scribble_anim_cycle/scribble_anim_cycle.yy",},
     {"name":"scribble_anim_disabled","order":2,"path":"scripts/scribble_anim_disabled/scribble_anim_disabled.yy",},
     {"name":"scribble_anim_get_disabled","order":3,"path":"scripts/scribble_anim_get_disabled/scribble_anim_get_disabled.yy",},

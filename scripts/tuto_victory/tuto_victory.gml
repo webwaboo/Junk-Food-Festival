@@ -176,7 +176,7 @@ function tuto_victory() {
 		            }
 		            if (total > 12) {
 		                if (!variable_global_exists("tuto_timer_reset")) {
-		                    global.tuto_timer_reset = game_get_speed(gamespeed_fps) * 10; // 10 sec
+		                    global.tuto_timer_reset = game_get_speed(gamespeed_fps) * 15; // 15 sec
 		                } else {
 		                    global.tuto_timer_reset--;
 		                    if (global.tuto_timer_reset <= 0) return true;

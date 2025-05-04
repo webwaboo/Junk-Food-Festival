@@ -541,8 +541,6 @@
     {"id":{"name":"reposition_line","path":"scripts/reposition_line/reposition_line.yy",},},
     {"id":{"name":"restart_game","path":"scripts/restart_game/restart_game.yy",},},
     {"id":{"name":"save_controls","path":"scripts/save_controls/save_controls.yy",},},
-    {"id":{"name":"scr_tuto_1_success","path":"scripts/scr_tuto_1_success/scr_tuto_1_success.yy",},},
-    {"id":{"name":"scr_tuto_2_success","path":"scripts/scr_tuto_2_success/scr_tuto_2_success.yy",},},
     {"id":{"name":"scribble_add_macro","path":"scripts/scribble_add_macro/scribble_add_macro.yy",},},
     {"id":{"name":"scribble_anim_blink","path":"scripts/scribble_anim_blink/scribble_anim_blink.yy",},},
     {"id":{"name":"scribble_anim_cycle","path":"scripts/scribble_anim_cycle/scribble_anim_cycle.yy",},},
