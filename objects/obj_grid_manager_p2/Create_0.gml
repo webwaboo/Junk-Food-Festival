@@ -26,12 +26,30 @@ if (string_starts_with(room_get_name(room), "rm_tuto_")) {
 	} else {
 		for (var i = 0; i < 6; i++) {
 		    var b = instance_create_layer(0, 0, "Instances", obj_bloc);
-		    b.bloc_taille = irandom_range(1, 3);
-		    b.bloc_couleur = choose("rouge", "vert", "bleu");
+		    b.bloc_taille = irandom_range(1, 2);
+		    b.bloc_couleur = choose("rouge", "vert");
 			b.bloc_owner = "J2";
 		    set_bloc_sprite(b);
 
 		    add_bloc_to_line_p2(i, b);
+		}
+		for (var i = 0; i < 6; i++) {
+			var b = instance_create_layer(0, 0, "Instances", obj_bloc);
+			b.bloc_taille = irandom_range(1, 2);
+			b.bloc_couleur = "bleu";
+			b.bloc_owner = "J2";
+			set_bloc_sprite(b);
+
+			add_bloc_to_line_p2(i, b);
+		}
+		for (var i = 0; i < 6; i++) {
+			var b = instance_create_layer(0, 0, "Instances", obj_bloc);
+			b.bloc_taille = 1;
+			b.bloc_couleur = choose("rouge", "vert");
+			b.bloc_owner = "J2";
+			set_bloc_sprite(b);
+
+			add_bloc_to_line_p2(i, b);
 		}
 	}
 global.game_paused = false;

@@ -23,18 +23,36 @@ ligne_spacing = 32;
 //x_start = 0;
 bloc_spacing = 0;
 
-//generate random bloc at the start
+//generate 3 random column bloc at the start
 if (string_starts_with(room_get_name(room), "rm_tuto_")) {
 	exit;
 	} else {
 		for (var i = 0; i < 6; i++) {
 		    var b = instance_create_layer(0, 0, "Instances", obj_bloc);
-		    b.bloc_taille = irandom_range(1, 3);
-		    b.bloc_couleur = choose("rouge", "vert", "bleu");
+		    b.bloc_taille = irandom_range(1, 2);
+		    b.bloc_couleur = choose("rouge", "vert");
 			b.bloc_owner = "J1";
 		    set_bloc_sprite(b);
 
 		    add_bloc_to_line(i, b);
+		}
+		for (var i = 0; i < 6; i++) {
+			var b = instance_create_layer(0, 0, "Instances", obj_bloc);
+			b.bloc_taille = irandom_range(1, 2);
+			b.bloc_couleur = "bleu";
+			b.bloc_owner = "J1";
+			set_bloc_sprite(b);
+
+			add_bloc_to_line(i, b);
+		}
+		for (var i = 0; i < 6; i++) {
+			var b = instance_create_layer(0, 0, "Instances", obj_bloc);
+			b.bloc_taille = 1;
+			b.bloc_couleur = choose("rouge", "vert");
+			b.bloc_owner = "J1";
+			set_bloc_sprite(b);
+
+			add_bloc_to_line(i, b);
 		}
 }
 

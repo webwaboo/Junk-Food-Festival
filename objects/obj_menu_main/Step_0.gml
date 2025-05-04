@@ -1,12 +1,12 @@
 // === Tutoriel ===
 if (menu_state == "tutorial") {
-    if (keyboard_check_pressed(vk_right)) {
+    if (input_check_pressed("right")) {
         tutorial_page = min(tutorial_page + 1, array_length(tutorial_images) - 1);
     }
-    if (keyboard_check_pressed(vk_left)) {
+    if (input_check_pressed("left")) {
         tutorial_page = max(tutorial_page - 1, 0);
     }
-    if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter)) {
+    if (input_check_pressed("accept") || input_check_pressed("back")) {
         menu_state = "main";
     }
     exit; // ne pas exécuter le reste
@@ -18,18 +18,18 @@ if (menu_state == "controls") {
     var key_name = keys_array[menu_index];
 
     if (!waiting_for_key) {
-        if (keyboard_check_pressed(vk_up)) {
+        if (input_check_pressed("up")) {
             menu_index = (menu_index - 1 + array_length(keys_array)) mod array_length(keys_array);
         }
-        if (keyboard_check_pressed(vk_down)) {
+        if (input_check_pressed("down")) {
             menu_index = (menu_index + 1) mod array_length(keys_array);
         }
 
-        if (keyboard_check_pressed(vk_enter)) {
+        if (input_check_pressed("accept")) {
             waiting_for_key = true;
         }
 
-        if (keyboard_check_pressed(vk_escape)) {
+        if (input_check_pressed("back")) {
             menu_state = "options";
             menu_index = 0;
         }
@@ -86,17 +86,17 @@ else if (menu_state == "controls_p2") {
 var options = (menu_state == "main") ? menu_options_main : menu_options_options;
 
 // Navigation dans les menus classiques
-if (keyboard_check_pressed(vk_up)) {
+if (input_check_pressed("up")) {
     menu_index = (menu_index - 1 + array_length(options)) mod array_length(options);
 	audio_play_sound(snd_option_select, 1, false);
 
 }
-if (keyboard_check_pressed(vk_down)) {
+if (input_check_pressed("down")) {
     menu_index = (menu_index + 1) mod array_length(options);
 	audio_play_sound(snd_option_select, 1, false);
 }
 	
-	if (keyboard_check_pressed(vk_escape) && menu_state=="options") {
+	if (input_check_pressed("back") && menu_state=="options") {
 		menu_state = "main";
 		menu_index = 0;
 }
@@ -104,7 +104,7 @@ if (keyboard_check_pressed(vk_down)) {
 
 	
 // Sélection
-if (keyboard_check_pressed(vk_enter)) {
+if (input_check_pressed("accept")) {
 	audio_play_sound(snd_select_move, 1, false);
     var selection = options[menu_index];
 
@@ -112,7 +112,7 @@ if (keyboard_check_pressed(vk_enter)) {
         switch (selection) {
             case "Start": room_goto(rm_main_game); break;
             case "Options": menu_state = "options"; menu_index = 0; break;
-            case "Tutorial": room_goto(rm_tuto_9)/*menu_state = "tutorial"; menu_index = 0*/; break;
+            case "Tutorial": room_goto(rm_tuto_1)/*menu_state = "tutorial"; menu_index = 0*/; break;
 			case "Credits": room_goto(rm_credits); break;
             case "Quit": game_end(); break;
         }

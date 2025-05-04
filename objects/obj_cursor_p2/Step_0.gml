@@ -81,7 +81,7 @@ if (bloc != noone) {
 }
 
 // ==========================
-// 🚀 Envoi de bloc (touche J4
+//  Envoi de bloc (touche J)
 // ==========================
 if (keyboard_check(global.controls_j2.send) && bloc != noone || gamepad_button_check(1, gp_face3) && bloc != noone) {
     send_hold_timer_p2++;

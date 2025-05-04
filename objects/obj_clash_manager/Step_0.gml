@@ -3,7 +3,8 @@ if (global.game_paused) exit;
 if (is_game_over()) exit;
 
 // Compte les inputs
-if (keyboard_check_pressed(global.controls_j1.send)) {
+//if (keyboard_check_pressed(global.controls_j1.send)) {
+if (input_check_pressed("bloc_send")){
 	mash_j1++;
 	audio_play_sound(snd_clash_mash, 1, false);
 }

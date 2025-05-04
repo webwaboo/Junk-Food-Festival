@@ -1,4 +1,4 @@
-if (keyboard_check_pressed(vk_anykey)) {
+if (keyboard_check_pressed(vk_anykey) || input_gamepad_any_pressed(0)) {
     room_goto(rm_menu)
 }
 

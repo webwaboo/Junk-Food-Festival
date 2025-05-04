@@ -5,7 +5,7 @@ if (is_game_over()) exit;
 if (!global.game_paused) {
     timer_frame++;
 
-    if (timer_frame >= room_speed) {
+    if (timer_frame >= game_get_speed(gamespeed_fps)) {
         timer_frame = 0;
         global.timer_seconds--;
 

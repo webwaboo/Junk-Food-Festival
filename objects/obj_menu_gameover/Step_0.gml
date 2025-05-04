@@ -1,15 +1,15 @@
 // Navigation haut/bas
-if (keyboard_check_pressed(vk_up)) {
+if (input_check_pressed("up")) {
     menu_index = (menu_index - 1 + array_length(menu_options)) mod array_length(menu_options);
 	audio_play_sound(snd_option_select, 1, false);
 }
-if (keyboard_check_pressed(vk_down)) {
+if (input_check_pressed("down")) {
     menu_index = (menu_index + 1) mod array_length(menu_options);
 	audio_play_sound(snd_option_select, 1, false);
 }
 
 // Validation
-if (keyboard_check_pressed(vk_enter)) {
+if (input_check_pressed("accept")) {
     var choice = menu_options[menu_index];
     audio_play_sound(snd_select_move, 1, false);
     switch (choice) {
