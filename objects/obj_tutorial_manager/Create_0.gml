@@ -42,7 +42,7 @@ switch (room) {
 
     // ... autres niveaux à venir
 	case rm_tuto_4:
-	    consigne = "Move the size 3 bloc to the end of the line using [spr_pad_a]/[spr_key_a].";
+	    consigne = "Move the size 3 bloc to the end of the line using [spr_pad_x]/[spr_key_a].";
 	    explication = "Shift changes the order of blocs in a line!";
 	    controls_enabled = {
 	        cursor: true,
@@ -87,6 +87,7 @@ switch (room) {
 	        shift: false
 	    };
 	    success_check = tuto_victory;
+		global.bonus_spawned = false;
 	    break;
 
 	case rm_tuto_8:

@@ -112,7 +112,22 @@ function tuto_victory() {
 		    return false;
 			
 		case rm_tuto_7:
-			return global.score_j1 >= 500;
+			//return global.score_j1 >= 500;
+			// Si le bonus a été attrapé
+			if (global.score_j1 >= 500) return true;
+
+		    // On attend que le bonus apparaisse au moins une fois
+		    if (!variable_global_exists("bonus_spawned")) global.bonus_spawned = false;
+		    if (instance_exists(obj_bonus)) global.bonus_spawned = true;
+
+		    // Si le bonus a été spawné, mais a disparu sans être attrapé
+		    if (global.bonus_spawned && !instance_exists(obj_bonus)) {
+		        room_restart();
+		        return false;
+		    }
+
+			return false;
+
 		
 		case rm_tuto_8:
 			{
