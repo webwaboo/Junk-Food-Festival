@@ -1,3 +1,4 @@
+//create bonus object depending on bonus timer
 //check if gameover or paused
 if (global.game_paused) exit;
 if (is_game_over()) exit;

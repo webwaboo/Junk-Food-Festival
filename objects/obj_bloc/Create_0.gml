@@ -1,3 +1,5 @@
+//create Bloc size/color, setup digestion timer, setup gameover timer
+
 // Par défaut, tu peux initialiser des valeurs (elles pourront être modifiées après création)
 bloc_taille = 3; // 1 = 16x32, 2 = 32x32, 3 = 48x32
 bloc_couleur = "vert"; // "rouge", "vert", "bleu"

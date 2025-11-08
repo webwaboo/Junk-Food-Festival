@@ -1,4 +1,4 @@
-//transforme un bloc normal en bloc clash
+//transform normal bloc into clash bloc, set up direction and speed
 direction = 0; // 0 = vers la droite, 180 = vers la gauche
 speed = 4;
 

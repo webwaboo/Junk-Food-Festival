@@ -1,3 +1,4 @@
+//setup current music var, persistent
 music_current = noone;
 
 audio_stop_all(); // Juste au cas où

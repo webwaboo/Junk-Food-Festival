@@ -1,3 +1,4 @@
+//unused
 // obj_menu_tutorial – Create Event
 current_page = 0;
 tutorial_pages = [

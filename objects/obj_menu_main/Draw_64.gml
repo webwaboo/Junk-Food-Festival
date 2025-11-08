@@ -1,3 +1,4 @@
+//Draw main menu, options menu, rebinding menu
 // obj_menu_main → Draw GUI
 
 draw_set_halign(fa_center);

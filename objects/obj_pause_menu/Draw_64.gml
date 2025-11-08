@@ -1,3 +1,4 @@
+//draw text menu on darker screen
 // === Effet fondu noir semi-transparent ===
 draw_set_alpha(0.5);
 draw_set_color(c_black);

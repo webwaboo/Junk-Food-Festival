@@ -1,3 +1,4 @@
+//setup success menu options, sound
 if (room=rm_tuto_9){
 	menu_options = [ "Quit to Title", "Retry"];
 }else{

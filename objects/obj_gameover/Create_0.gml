@@ -1,3 +1,4 @@
+//setup name of winner, alpha for crossfade
 // Valeur par défaut (à écraser à la création)
 vainqueur = "J1";
 alpha = 1;

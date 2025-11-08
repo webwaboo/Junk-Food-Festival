@@ -1,3 +1,4 @@
+//setup number of lines, player grid, timer of bloc creation per difficulty, random starting bloc
 grid_lines = 6; // number of horizontal lines
 player_grid = array_create(grid_lines); // 1 array per line
 bloc_timer = 420; // 7 secondes à 60 fps

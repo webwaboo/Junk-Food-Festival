@@ -1,3 +1,4 @@
+//draw special gameover menu
 // Empêche toute influence de l'alpha global
 draw_set_alpha(1);
 

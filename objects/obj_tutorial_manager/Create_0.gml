@@ -1,3 +1,4 @@
+//create each room with their specific control/consigne
 global.bonus_was_created = false;
 global.clash_occurred = false;
 

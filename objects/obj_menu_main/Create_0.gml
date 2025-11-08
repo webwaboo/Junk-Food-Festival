@@ -1,5 +1,5 @@
+//create main menu tabs, options menu tabs, setup difficulty
 // obj_menu_main → Refactored with state-based logic
-
 // === Create Event ===
 menu_state = "main";
 menu_index = 0;
@@ -7,7 +7,7 @@ menu_y_offset = 500;
 menu_spacing = 48;
 
 menu_options_main = ["Start", "Options", "Tutorial", "Credits", "Quit"];
-menu_options_options = ["Controls J1", "Controls J2", "Difficulty: Easy", "Back"];
+menu_options_options = ["Controls J1", "Controls J2", "Difficulty: Easy", "Fullscreen: OFF", "Back"];
 
 
 // === Variables nécessaires pour tutorial ===

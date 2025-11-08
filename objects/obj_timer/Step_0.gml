@@ -1,3 +1,4 @@
+//handle end of timer logic, score victory
 //check if gameover or paused
 if (global.game_paused) exit;
 if (is_game_over()) exit;

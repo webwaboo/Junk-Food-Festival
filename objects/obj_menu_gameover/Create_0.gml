@@ -1,3 +1,4 @@
+//create menu options, pause sound
 // Texte du menu
 menu_title = "Game Over";
 menu_options = ["Replay","Main Menu", "Quit"];

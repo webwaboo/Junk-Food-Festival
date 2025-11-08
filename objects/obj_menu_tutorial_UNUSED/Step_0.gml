@@ -1,3 +1,4 @@
+//unused
 // Naviguer entre les pages
 if (input_check_pressed("right")) {
     current_page = (current_page + 1) mod page_count;

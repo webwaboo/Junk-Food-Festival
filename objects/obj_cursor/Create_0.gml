@@ -1,3 +1,4 @@
+//setup cursor startin position, space between lines, timer/sound for sending bloc
 // Position de départ (ligne 0)
 if(room = rm_tuto_1 || room = rm_tuto_8){
 	ligne_index = 2;

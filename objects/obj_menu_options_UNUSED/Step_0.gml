@@ -1,3 +1,4 @@
+//unused
 if (input_check_pressed("up")) {
     menu_index = (menu_index - 1 + array_length(menu_options)) mod array_length(menu_options);
 }

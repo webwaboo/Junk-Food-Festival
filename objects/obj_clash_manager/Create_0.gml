@@ -1,3 +1,4 @@
+//Set up, clash score, clash timer, pause game, clash sound
 // Initialisation
 mash_j1 = 0;
 mash_j2 = 0;

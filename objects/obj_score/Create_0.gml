@@ -1,3 +1,4 @@
+//setup starting score for P1/P2
 global.score_j1 = 0;
 global.score_j2 = 0;
 

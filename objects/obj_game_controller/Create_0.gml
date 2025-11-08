@@ -1,3 +1,5 @@
+//set up fullscreen, load controls, global paused status
+
 // Génère 3 blocs de différentes tailles et couleurs pour tester
 /*for (var i = 0; i < 6; i++) {
     var b = instance_create_layer(0, i * 32, "Instances", obj_bloc);
@@ -15,3 +17,6 @@
 init_controls();
 room_goto_next(); // Move to the next room after initialization
 global.game_paused = false;
+global.fullscreen = false;
+window_set_fullscreen(false); // Enable fullscreen or not, disabled by defaut
+

@@ -1,3 +1,4 @@
+//draw explication, consigne, room 8 timer
 //display explication + consigne
 var y_pos = 48
 var height = scribble("[fa_center][fnt_bangers][c_white]Objective : " + string(consigne)).wrap(display_get_gui_width()).get_height();

@@ -1,3 +1,4 @@
+// handle navigation in control menu, handle toggle of fullscreen, difficulty, rebinding of control
 // === Tutoriel ===
 if (menu_state == "tutorial") {
     if (input_check_pressed("right")) {
@@ -81,7 +82,6 @@ else if (menu_state == "controls_p2") {
 }
 
 
-
 // === Menus classiques ===
 var options = (menu_state == "main") ? menu_options_main : menu_options_options;
 
@@ -141,10 +141,18 @@ if (input_check_pressed("accept")) {
 		    // Met à jour l'affichage dans le menu
 		    menu_options_options[2] = "Difficulty: " + global.difficulty;
 		    break;
+			
+			 //case "Fullscreen":
+			case "Fullscreen: OFF":
+			case "Fullscreen: ON":
+				global.fullscreen = !global.fullscreen; // toggle
+				var new_label = "Fullscreen: " + (global.fullscreen ? "ON" : "OFF");
+		        window_set_fullscreen(global.fullscreen);
+				menu_options_options[3] = new_label; // update label in menu
+		        break;
 
             case "Back": menu_state = "main"; menu_index = 0; break;
         }
     }
 }
-
 

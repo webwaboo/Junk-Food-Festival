@@ -1,3 +1,4 @@
+//draw score, timer
 scribble("[fa_center][fa_top][fnt_bangers]Score J1: "+ string(global.score_j1)).draw(192, 16);
 scribble("[fa_center][fa_top][fnt_bangers]Score J2: "+ string(global.score_j2)).draw(display_get_gui_width() - 192, 16);
 

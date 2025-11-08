@@ -1,3 +1,4 @@
+//setup number of lines, empty array
 grid_lines = 6; // number of lines
 player_grid = array_create(grid_lines);
 

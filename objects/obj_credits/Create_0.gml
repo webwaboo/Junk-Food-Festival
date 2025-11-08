@@ -1,3 +1,4 @@
+//set list of persons to credit, speed/starting position of credits
 // Liste des personnes à créditer
 credits_list = [
     ["Game Design:", ["Chronicles"]],
