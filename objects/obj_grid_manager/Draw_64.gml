@@ -26,7 +26,7 @@ if (!is_undefined(camera)) {
 
 var left = port_x + (x_start - view_x) * scale_x;
 var top = port_y + (y_start - view_y) * scale_y;
-var unit_width = sprite_get_width(spr_bloc_rouge_1);
+var unit_width = sprite_get_width(spr_meatball_1);
 var max_units = 13;
 var target_width = max_units * unit_width + max(0, max_units - 1) * bloc_spacing;
 

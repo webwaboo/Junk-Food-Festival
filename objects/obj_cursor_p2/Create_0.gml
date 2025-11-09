@@ -21,6 +21,10 @@ ai_shift_interval = 12; // frames between automatic rotations
 ai_send_cooldown = 0;
 ai_send_interval = 45; // cooldown before resending a bloc
 
+if (global.p2_ai_enabled) {
+    instance_create_layer(0, 0, "Instances", obj_enemy_ai);
+}
+
 global.game_paused = false;
 //timer pour appui long
 send_hold_timer_p2 = 0;
