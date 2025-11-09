@@ -75,6 +75,7 @@
     {"name":"fnt_bangers","order":1,"path":"fonts/fnt_bangers/fnt_bangers.yy",},
     {"name":"scribble_fallback_font","order":23,"path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},
     {"name":"input_controller_object","order":32,"path":"objects/input_controller_object/input_controller_object.yy",},
+    {"name":"obj_ai_enemy","order":24,"path":"objects/obj_ai_enemy/obj_ai_enemy.yy",},
     {"name":"obj_bloc","order":3,"path":"objects/obj_bloc/obj_bloc.yy",},
     {"name":"obj_bonus","order":17,"path":"objects/obj_bonus/obj_bonus.yy",},
     {"name":"obj_clash_bloc","order":7,"path":"objects/obj_clash_bloc/obj_clash_bloc.yy",},

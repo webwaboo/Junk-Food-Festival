@@ -99,6 +99,7 @@
     {"id":{"name":"fnt_large","path":"fonts/fnt_large/fnt_large.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"input_controller_object","path":"objects/input_controller_object/input_controller_object.yy",},},
+    {"id":{"name":"obj_ai_enemy","path":"objects/obj_ai_enemy/obj_ai_enemy.yy",},},
     {"id":{"name":"obj_bloc","path":"objects/obj_bloc/obj_bloc.yy",},},
     {"id":{"name":"obj_bonus","path":"objects/obj_bonus/obj_bonus.yy",},},
     {"id":{"name":"obj_clash_bloc","path":"objects/obj_clash_bloc/obj_clash_bloc.yy",},},
