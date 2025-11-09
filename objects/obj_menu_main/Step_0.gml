@@ -110,9 +110,10 @@ if (input_check_pressed("accept")) {
 
     if (menu_state == "main") {
         switch (selection) {
-            case "Start": room_goto(rm_main_game); break;
+            case "VS Mode": global.p2_ai_enabled = false; room_goto(rm_main_game); break;
+			case "Arcade": global.p2_ai_enabled = true; room_goto(rm_main_game); break;
             case "Options": menu_state = "options"; menu_index = 0; break;
-            case "Tutorial": room_goto(rm_tuto_1)/*menu_state = "tutorial"; menu_index = 0*/; break;
+            case "Tutorial": global.p2_ai_enabled = false; room_goto(rm_tuto_1); break;
 			case "Credits": room_goto(rm_credits); break;
             case "Quit": game_end(); break;
         }

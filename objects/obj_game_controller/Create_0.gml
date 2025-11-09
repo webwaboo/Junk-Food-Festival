@@ -20,3 +20,5 @@ global.game_paused = false;
 global.fullscreen = false;
 window_set_fullscreen(false); // Enable fullscreen or not, disabled by defaut
 
+// Ensure the AI flag exists and default to local multiplayer
+global.p2_ai_enabled = false;
