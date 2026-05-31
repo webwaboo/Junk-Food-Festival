@@ -16,7 +16,7 @@ function check_digestion(line_index) {
 
         // ⏱️ Si timer non lancé, on le démarre
         if (first_bloc.digestion_timer == -1) {
-            first_bloc.digestion_timer = 180; // 3 secondes
+            first_bloc.digestion_timer = global.digestion_timer_duration;
         } else {
             first_bloc.digestion_timer--;
 

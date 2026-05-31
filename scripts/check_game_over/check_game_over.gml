@@ -13,7 +13,15 @@ function check_game_over(line_index, joueur) {
 
     var total = 0;
 
-    for (var i = 0; i < array_length(line); i++) {
+    // J1: digestion is at index 0, danger overflow is at high indices → iterate forward
+    // J2: digestion is at last index, danger overflow is at low indices → iterate reverse
+    //     (so the overflow threshold block is at a low index, away from the digestion block)
+    var line_len = array_length(line);
+    var i_start = (joueur == "J1") ? 0 : line_len - 1;
+    var i_end   = (joueur == "J1") ? line_len - 1 : 0;
+    var i_step  = (joueur == "J1") ? 1 : -1;
+
+    for (var i = i_start; (joueur == "J1") ? (i <= i_end) : (i >= i_end); i += i_step) {
         var bloc = line[i];
 
         if (!instance_exists(bloc)) continue;
@@ -36,7 +44,7 @@ function check_game_over(line_index, joueur) {
                 if (bloc.danger_timer <= 0) {
                     var vainqueur = (joueur == "J1") ? "J2" : "J1";
                     show_debug_message("💀 GAME OVER " + joueur + " → " + vainqueur + " gagne !");
-                    
+
                     var g = instance_create_layer(room_width / 2, room_height / 2, "Instances", obj_gameover);
                     g.vainqueur = vainqueur;
 

@@ -23,8 +23,15 @@ function init_controls() {
             shift: ini_read_real("controls_j2", "shift", vk_numpad6)
         };
 
+        global.difficulty               = ini_read_string("gameplay", "difficulty",           "Easy");
+        global.fullscreen               = (ini_read_real("gameplay",  "fullscreen",                0) == 1);
+        global.digestion_timer_duration = ini_read_real("gameplay",   "digestion_timer",         180);
+        global.game_timer_duration      = ini_read_real("gameplay",   "game_timer",               99);
+        global.bonus_500pts_enabled     = (ini_read_real("gameplay",  "bonus_500pts_enabled",      1) == 1);
+        global.bonus_500pts_freq        = ini_read_string("gameplay", "bonus_500pts_freq",  "normal");
+
         ini_close();
-    } else {	
+    } else {
 		global.controls_j1 = {
 		    up: ord("W"),
 		    down: ord("S"),
@@ -42,5 +49,12 @@ function init_controls() {
 		    send: vk_numpad4,
 		    shift: vk_numpad6
 		};
+
+        global.difficulty               = "Easy";
+        global.fullscreen               = false;
+        global.digestion_timer_duration = 180;
+        global.game_timer_duration      = 99;
+        global.bonus_500pts_enabled     = true;
+        global.bonus_500pts_freq        = "normal";
 	}
 }

@@ -16,7 +16,7 @@ function check_digestion_p2(line_index) {
     if (first_bloc.bloc_taille == 3) {
 
         if (first_bloc.digestion_timer == -1) {
-            first_bloc.digestion_timer = 180; // 3 sec à 60 FPS
+            first_bloc.digestion_timer = global.digestion_timer_duration;
         } else {
             first_bloc.digestion_timer--;
 

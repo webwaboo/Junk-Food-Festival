@@ -118,10 +118,10 @@ function tuto_victory() {
 
 		    // On attend que le bonus apparaisse au moins une fois
 		    if (!variable_global_exists("bonus_spawned")) global.bonus_spawned = false;
-		    if (instance_exists(obj_bonus)) global.bonus_spawned = true;
+		    if (instance_exists(obj_bonus_500pts)) global.bonus_spawned = true;
 
 		    // Si le bonus a été spawné, mais a disparu sans être attrapé
-		    if (global.bonus_spawned && !instance_exists(obj_bonus)) {
+		    if (global.bonus_spawned && !instance_exists(obj_bonus_500pts)) {
 		        room_restart();
 		        return false;
 		    }

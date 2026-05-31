@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bonus",
+  "%Name":"obj_bonus_500pts",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_bonus",
+  "name":"obj_bonus_500pts",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bonus",
-    "path":"sprites/spr_bonus/spr_bonus.yy",
+    "name":"spr_bonus_500pts",
+    "path":"sprites/spr_bonus_500pts/spr_bonus_500pts.yy",
   },
   "spriteMaskId":null,
   "visible":true,

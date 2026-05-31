@@ -14,11 +14,10 @@
 //show_debug_overlay(false); // Enable the debug overlay
 
 // Create Event of obj_controller
+// init_controls() sets all persistent globals (controls, difficulty, fullscreen, gameplay settings)
 init_controls();
-room_goto_next(); // Move to the next room after initialization
-global.game_paused = false;
-global.fullscreen = false;
-window_set_fullscreen(false); // Enable fullscreen or not, disabled by defaut
+room_goto_next();
 
-// Ensure the AI flag exists and default to local multiplayer
+global.game_paused  = false;
 global.p2_ai_enabled = false;
+window_set_fullscreen(global.fullscreen);

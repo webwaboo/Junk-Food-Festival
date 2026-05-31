@@ -3,6 +3,6 @@
 if (string_starts_with(room_get_name(room), "rm_tuto_")) {
 	global.timer_seconds = 15;
 } else {
-	global.timer_seconds = 99;
+	global.timer_seconds = global.game_timer_duration;
 }
 timer_frame = 0;

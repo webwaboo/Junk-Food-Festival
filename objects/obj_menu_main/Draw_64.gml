@@ -75,13 +75,21 @@ else if (menu_state == "controls_p2") {
 }
 
 
-// === MAIN & OPTIONS MENU ===
+// === MAIN, OPTIONS & GAMEPLAY MENU ===
 draw_set_color(c_green);
 
-var title = (menu_state == "main") ? "Junk Food Festival" : "Options";
-scribble("[fnt_bangers][fa_center][fa_top][spr_popcorn,0][c_green][wave]"+string(title)+"[][spr_burger,0]").draw(display_get_gui_width() / 2, 400); //draw_text(display_get_gui_width() / 2, 425, title);
+var title;
+if (menu_state == "main")                  title = "Junk Food Festival";
+else if (menu_state == "gameplay")         title = "Gameplay";
+else if (menu_state == "gameplay_bonuses") title = "Bonuses";
+else                                       title = "Options";
+scribble("[fnt_bangers][fa_center][fa_top][spr_popcorn,0][c_green][wave]"+string(title)+"[][spr_burger,0]").draw(display_get_gui_width() / 2, 400);
 
-var options = (menu_state == "main") ? menu_options_main : menu_options_options;
+var options;
+if (menu_state == "main")                  options = menu_options_main;
+else if (menu_state == "gameplay")         options = menu_options_gameplay;
+else if (menu_state == "gameplay_bonuses") options = menu_options_bonuses;
+else                                       options = menu_options_options;
 
 for (var i = 0; i < array_length(options); i++) {
     var txt = options[i];

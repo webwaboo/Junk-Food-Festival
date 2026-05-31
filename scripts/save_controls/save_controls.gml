@@ -18,5 +18,13 @@ function save_controls() {
     ini_write_string("controls_j2", "send", string(global.controls_j2.send));
     ini_write_string("controls_j2", "shift", string(global.controls_j2.shift));
 
+    // Gameplay settings
+    ini_write_string("gameplay", "difficulty",             global.difficulty);
+    ini_write_real("gameplay",   "fullscreen",             global.fullscreen ? 1 : 0);
+    ini_write_real("gameplay",   "digestion_timer",        global.digestion_timer_duration);
+    ini_write_real("gameplay",   "game_timer",             global.game_timer_duration);
+    ini_write_real("gameplay",   "bonus_500pts_enabled",   global.bonus_500pts_enabled ? 1 : 0);
+    ini_write_string("gameplay", "bonus_500pts_freq",      global.bonus_500pts_freq);
+
     ini_close();
 }
