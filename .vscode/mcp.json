@@ -1,0 +1,10 @@
+{
+	"servers": {
+		"gamemaker-mcp-server": {
+			"type": "stdio",
+			"command": "node",
+			"args": ["../../GameMaker-MCP-Server/dist/index.js"]
+		}
+	},
+	"inputs": []
+}
