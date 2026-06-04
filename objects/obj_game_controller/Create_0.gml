@@ -21,3 +21,9 @@ room_goto_next();
 global.game_paused  = false;
 global.p2_ai_enabled = false;
 window_set_fullscreen(global.fullscreen);
+
+// Pin Input plugin player 0 (J1 + menus) to gamepad slot 0 so hotswap
+// doesn't steal it when a second controller is plugged in
+if (gamepad_is_connected(0)) {
+    input_source_set(input_gamepad(0), 0);
+}

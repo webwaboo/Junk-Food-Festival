@@ -1,5 +1,5 @@
 //setup number of lines, player grid, timer of bloc creation per difficulty, random starting bloc
-grid_lines = 6; // number of horizontal lines
+grid_lines = string_starts_with(room_get_name(room), "rm_tuto_") ? 6 : global.grid_lines_count;
 player_grid = array_create(grid_lines); // 1 array per line
 switch (global.difficulty) {
     case "Easy":    bloc_timer_max = game_get_speed(gamespeed_fps) * 7; break;
@@ -25,7 +25,7 @@ bloc_spacing = 0;
 if (string_starts_with(room_get_name(room), "rm_tuto_")) {
 	exit;
 	} else {
-		for (var i = 0; i < 6; i++) {
+		for (var i = 0; i < grid_lines; i++) {
 		    var b = instance_create_layer(0, 0, "Instances", obj_bloc);
 		    b.bloc_taille = irandom_range(1, 2);
 		    b.bloc_couleur = choose("rouge", "vert");
@@ -34,7 +34,7 @@ if (string_starts_with(room_get_name(room), "rm_tuto_")) {
 
 		    add_bloc_to_line_p2(i, b);
 		}
-		for (var i = 0; i < 6; i++) {
+		for (var i = 0; i < grid_lines; i++) {
 			var b = instance_create_layer(0, 0, "Instances", obj_bloc);
 			b.bloc_taille = irandom_range(1, 2);
 			b.bloc_couleur = "bleu";
@@ -43,7 +43,7 @@ if (string_starts_with(room_get_name(room), "rm_tuto_")) {
 
 			add_bloc_to_line_p2(i, b);
 		}
-		for (var i = 0; i < 6; i++) {
+		for (var i = 0; i < grid_lines; i++) {
 			var b = instance_create_layer(0, 0, "Instances", obj_bloc);
 			b.bloc_taille = 1;
 			b.bloc_couleur = choose("rouge", "vert");

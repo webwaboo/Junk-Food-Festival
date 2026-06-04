@@ -92,7 +92,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Junk Food Festival",
   "resources":[
@@ -103,6 +103,7 @@
     {"id":{"name":"input_controller_object","path":"objects/input_controller_object/input_controller_object.yy",},},
     {"id":{"name":"obj_bloc","path":"objects/obj_bloc/obj_bloc.yy",},},
     {"id":{"name":"obj_bonus_500pts","path":"objects/obj_bonus_500pts/obj_bonus_500pts.yy",},},
+    {"id":{"name":"obj_bonus_send2","path":"objects/obj_bonus_send2/obj_bonus_send2.yy",},},
     {"id":{"name":"obj_clash_bloc","path":"objects/obj_clash_bloc/obj_clash_bloc.yy",},},
     {"id":{"name":"obj_clash_manager","path":"objects/obj_clash_manager/obj_clash_manager.yy",},},
     {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
@@ -666,6 +667,8 @@
     {"id":{"name":"spr_bloc_vert_2","path":"sprites/spr_bloc_vert_2/spr_bloc_vert_2.yy",},},
     {"id":{"name":"spr_bloc_vert_3","path":"sprites/spr_bloc_vert_3/spr_bloc_vert_3.yy",},},
     {"id":{"name":"spr_bonus_500pts","path":"sprites/spr_bonus_500pts/spr_bonus_500pts.yy",},},
+    {"id":{"name":"spr_bonus_quick_shot","path":"sprites/spr_bonus_quick_shot/spr_bonus_quick_shot.yy",},},
+    {"id":{"name":"spr_bonus_send2","path":"sprites/spr_bonus_send2/spr_bonus_send2.yy",},},
     {"id":{"name":"spr_burger","path":"sprites/spr_burger/spr_burger.yy",},},
     {"id":{"name":"spr_clash_zone","path":"sprites/spr_clash_zone/spr_clash_zone.yy",},},
     {"id":{"name":"spr_corner_line","path":"sprites/spr_corner_line/spr_corner_line.yy",},},

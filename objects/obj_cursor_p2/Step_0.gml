@@ -94,7 +94,8 @@ if (!using_ai) {
             global.sound_send_press_id2 = audio_play_sound(snd_bloc_send_press, 1, false);
         }
 
-        if (send_hold_timer_p2 >= send_hold_threshold_p2 && bloc.bloc_taille == 3) {
+        var _min_send_p2 = (global.send2_j2_timer > 0) ? 2 : 3;
+        if (send_hold_timer_p2 >= send_hold_threshold_p2 && bloc.bloc_taille >= _min_send_p2) {
             var line_send = current_line;
             array_delete(line_send, 0, 1);
 
@@ -141,7 +142,7 @@ if (!using_ai) {
         b.bloc_couleur = choose("rouge", "vert", "bleu");
         b.bloc_owner = "J2";
         set_bloc_sprite(b);
-        add_bloc_to_line_p2(irandom_range(0, 5), b);
+        add_bloc_to_line_p2(irandom_range(0, manager.grid_lines - 1), b);
     }
 } else {
     send_hold_timer_p2 = 0;

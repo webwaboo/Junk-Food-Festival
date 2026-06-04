@@ -572,6 +572,8 @@
     {"name":"spr_bloc_vert_2","order":6,"path":"sprites/spr_bloc_vert_2/spr_bloc_vert_2.yy",},
     {"name":"spr_bloc_vert_3","order":9,"path":"sprites/spr_bloc_vert_3/spr_bloc_vert_3.yy",},
     {"name":"spr_bonus_500pts","order":22,"path":"sprites/spr_bonus_500pts/spr_bonus_500pts.yy",},
+    {"name":"spr_bonus_quick_shot","order":52,"path":"sprites/spr_bonus_quick_shot/spr_bonus_quick_shot.yy",},
+    {"name":"spr_bonus_send2","order":51,"path":"sprites/spr_bonus_send2/spr_bonus_send2.yy",},
     {"name":"spr_burger","order":25,"path":"sprites/spr_burger/spr_burger.yy",},
     {"name":"spr_clash_zone","order":21,"path":"sprites/spr_clash_zone/spr_clash_zone.yy",},
     {"name":"spr_corner_line","order":11,"path":"sprites/spr_corner_line/spr_corner_line.yy",},

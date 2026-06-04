@@ -28,7 +28,11 @@ function init_controls() {
         global.digestion_timer_duration = ini_read_real("gameplay",   "digestion_timer",         180);
         global.game_timer_duration      = ini_read_real("gameplay",   "game_timer",               99);
         global.bonus_500pts_enabled     = (ini_read_real("gameplay",  "bonus_500pts_enabled",      1) == 1);
-        global.bonus_500pts_freq        = ini_read_string("gameplay", "bonus_500pts_freq",  "normal");
+        global.bonus_send2_enabled      = (ini_read_real("gameplay",  "bonus_send2_enabled",       1) == 1);
+        global.bonus_freq               = ini_read_string("gameplay", "bonus_freq",          "normal");
+        global.grid_lines_count         = ini_read_real("gameplay",   "grid_lines",                6);
+        global.send2_j1_timer           = 0;
+        global.send2_j2_timer           = 0;
 
         ini_close();
     } else {
@@ -55,6 +59,10 @@ function init_controls() {
         global.digestion_timer_duration = 180;
         global.game_timer_duration      = 99;
         global.bonus_500pts_enabled     = true;
-        global.bonus_500pts_freq        = "normal";
+        global.bonus_send2_enabled      = true;
+        global.bonus_freq               = "normal";
+        global.grid_lines_count         = 6;
+        global.send2_j1_timer           = 0;
+        global.send2_j2_timer           = 0;
 	}
 }

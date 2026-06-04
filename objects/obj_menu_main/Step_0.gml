@@ -84,11 +84,35 @@ else if (menu_state == "gameplay") {
                 menu_options_gameplay[1] = "Game Timer: " + string(global.game_timer_duration) + "s";
                 save_controls();
                 break;
-            case 2: // Bonuses
+            case 2: // Lines: cycle 4 → 6 → 8 → 4
+                switch (global.grid_lines_count) {
+                    case 4:  global.grid_lines_count = 6; break;
+                    case 6:  global.grid_lines_count = 8; break;
+                    default: global.grid_lines_count = 4; break;
+                }
+                menu_options_gameplay[2] = "Lines: " + string(global.grid_lines_count);
+                save_controls();
+                break;
+            case 3: // Bonus Freq: cycle often → normal → rare → often
+                switch (global.bonus_freq) {
+                    case "often":  global.bonus_freq = "normal"; break;
+                    case "normal": global.bonus_freq = "rare";   break;
+                    default:       global.bonus_freq = "often";  break;
+                }
+                var _bfl;
+                switch (global.bonus_freq) {
+                    case "often": _bfl = "Often (3-7s)";   break;
+                    case "rare":  _bfl = "Rare (20-30s)";  break;
+                    default:      _bfl = "Normal (10-15s)"; break;
+                }
+                menu_options_gameplay[3] = "Bonus Freq: " + _bfl;
+                save_controls();
+                break;
+            case 4: // Bonuses
                 menu_state = "gameplay_bonuses";
                 menu_index = 0;
                 break;
-            case 3: // Back
+            case 5: // Back
                 menu_state = "options";
                 menu_index = 0;
                 break;
@@ -116,8 +140,6 @@ else if (menu_state == "gameplay_bonuses") {
         exit;
     }
 
-    // Accept on a bonus row → toggle enabled
-    // Accept on Back → go back
     if (input_check_pressed("accept")) {
         audio_play_sound(snd_select_move, 1, false);
         if (menu_index == _back_idx) {
@@ -125,43 +147,17 @@ else if (menu_state == "gameplay_bonuses") {
             menu_index = 0;
         } else {
             switch (menu_index) {
-                case 0: global.bonus_500pts_enabled = !global.bonus_500pts_enabled; break;
+                case 0:
+                    global.bonus_500pts_enabled = !global.bonus_500pts_enabled;
+                    menu_options_bonuses[0] = "[spr_bonus_500pts,0] 500 pts  " + (global.bonus_500pts_enabled ? "ON" : "OFF");
+                    break;
+                case 1:
+                    global.bonus_send2_enabled = !global.bonus_send2_enabled;
+                    menu_options_bonuses[1] = "[spr_bonus_send2,0] Send 2  " + (global.bonus_send2_enabled ? "ON" : "OFF");
+                    break;
             }
-            // Rebuild label for changed row
-            var _en = global.bonus_500pts_enabled;
-            var _fr = global.bonus_500pts_freq;
-            var _fl;
-            switch (_fr) {
-                case "often": _fl = "Often (3-7s)";   break;
-                case "rare":  _fl = "Rare (20-30s)";  break;
-                default:      _fl = "Normal (10-15s)"; break;
-            }
-            menu_options_bonuses[menu_index] = "[spr_bonus_500pts,0] 500 pts  " + (_en ? "ON" : "OFF") + "  " + _fl;
             save_controls();
         }
-    }
-
-    // Left / Right → cycle frequency for the focused bonus row
-    if (menu_index != _back_idx && (input_check_pressed("left") || input_check_pressed("right"))) {
-        var _freqs = ["often", "normal", "rare"];
-        var _fi = 0;
-        for (var _i = 0; _i < 3; _i++) {
-            if (_freqs[_i] == global.bonus_500pts_freq) { _fi = _i; break; }
-        }
-        _fi = input_check_pressed("right") ? (_fi + 1) mod 3 : (_fi - 1 + 3) mod 3;
-        global.bonus_500pts_freq = _freqs[_fi];
-        audio_play_sound(snd_option_select, 1, false);
-
-        // Rebuild label
-        var _en2 = global.bonus_500pts_enabled;
-        var _fl2;
-        switch (global.bonus_500pts_freq) {
-            case "often": _fl2 = "Often (3-7s)";   break;
-            case "rare":  _fl2 = "Rare (20-30s)";  break;
-            default:      _fl2 = "Normal (10-15s)"; break;
-        }
-        menu_options_bonuses[menu_index] = "[spr_bonus_500pts,0] 500 pts  " + (_en2 ? "ON" : "OFF") + "  " + _fl2;
-        save_controls();
     }
 
     exit;

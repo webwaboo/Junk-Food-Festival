@@ -22,7 +22,7 @@ if (!tuto_mechanic_enabled("cursor_move")) {
 	    ligne_index -= 1;
 		audio_play_sound(snd_cursor_move, 1, false);
 	}
-	if (input_check_pressed("down") && ligne_index < 5){
+	if (input_check_pressed("down") && ligne_index < grid_manager.grid_lines - 1){
 	    ligne_index += 1;
 		audio_play_sound(snd_cursor_move, 1, false);
 	}
@@ -58,7 +58,7 @@ if (!tuto_mechanic_enabled("bloc_move")) {
 	    }
 	}
 	//if (keyboard_check_pressed(global.controls_j1.bloc_down) && bloc != noone && ligne_index < 5 || gamepad_button_check_pressed(0, gp_face1) && bloc != noone && ligne_index < 5) {
-	if (input_check_pressed("bloc_down") && bloc != noone && ligne_index < 5) {
+	if (input_check_pressed("bloc_down") && bloc != noone && ligne_index < grid_manager.grid_lines - 1) {
 	    var target = find_next_available_line(ligne_index, bloc.bloc_taille, 1);
 	    if (target != -1 && move_bloc_to_line(bloc, ligne_index, target)) {
 	        ligne_index = target;
@@ -112,7 +112,8 @@ if (!tuto_mechanic_enabled("send")) {
 	        global.sound_send_press_id = audio_play_sound(snd_bloc_send_press, 1, false);
 	    }
 
-	    if (send_hold_timer == send_hold_threshold && bloc.bloc_taille == 3) {
+	    var _min_send = (global.send2_j1_timer > 0) ? 2 : 3;
+	    if (send_hold_timer == send_hold_threshold && bloc.bloc_taille >= _min_send) {
 	        var line = grid[ligne_index];
 	        array_delete(line, array_length(line) - 1, 1);
 			if (audio_is_playing(global.sound_send_press_id)) {
@@ -158,7 +159,7 @@ if (keyboard_check_pressed(ord("G"))) {
     b.bloc_owner = "J1";
     set_bloc_sprite(b);
 
-    add_bloc_to_line(irandom_range(0, 5), b);
+    add_bloc_to_line(irandom_range(0, grid_manager.grid_lines - 1), b);
 }
 
 

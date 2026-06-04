@@ -19,22 +19,25 @@ menu_options_options = [
 // Build gameplay submenu labels from current globals
 var _dig_s = global.digestion_timer_duration / 60;
 var _dig_lbl = (global.digestion_timer_duration == 0) ? "Instant" : (string(_dig_s) + "s");
-menu_options_gameplay = [
-    "Digestion: " + _dig_lbl,
-    "Game Timer: " + string(global.game_timer_duration) + "s",
-    "Bonuses",
-    "Back"
-];
-
-// Build bonuses submenu
 var _bfreq_lbl;
-switch (global.bonus_500pts_freq) {
+switch (global.bonus_freq) {
     case "often": _bfreq_lbl = "Often (3-7s)";   break;
     case "rare":  _bfreq_lbl = "Rare (20-30s)";  break;
     default:      _bfreq_lbl = "Normal (10-15s)"; break;
 }
+menu_options_gameplay = [
+    "Digestion: " + _dig_lbl,
+    "Game Timer: " + string(global.game_timer_duration) + "s",
+    "Lines: " + string(global.grid_lines_count),
+    "Bonus Freq: " + _bfreq_lbl,
+    "Bonuses",
+    "Back"
+];
+
+// Build bonuses submenu (ON/OFF only — frequency is global)
 menu_options_bonuses = [
-    "[spr_bonus_500pts,0] 500 pts  " + (global.bonus_500pts_enabled ? "ON" : "OFF") + "  " + _bfreq_lbl,
+    "[spr_bonus_500pts,0] 500 pts  " + (global.bonus_500pts_enabled ? "ON" : "OFF"),
+    "[spr_bonus_send2,0] Send 2  "   + (global.bonus_send2_enabled  ? "ON" : "OFF"),
     "Back"
 ];
 
