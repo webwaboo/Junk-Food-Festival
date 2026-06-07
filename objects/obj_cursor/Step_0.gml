@@ -113,7 +113,8 @@ if (!tuto_mechanic_enabled("send")) {
 	    }
 
 	    var _min_send = (global.send2_j1_timer > 0) ? 2 : 3;
-	    if (send_hold_timer == send_hold_threshold && bloc.bloc_taille >= _min_send) {
+	    var _threshold = (global.quick_shot_j1_timer > 0) ? 1 : send_hold_threshold;
+	    if (send_hold_timer == _threshold && bloc.bloc_taille >= _min_send) {
 	        var line = grid[ligne_index];
 	        array_delete(line, array_length(line) - 1, 1);
 			if (audio_is_playing(global.sound_send_press_id)) {

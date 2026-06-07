@@ -23,9 +23,11 @@ function save_controls() {
     ini_write_real("gameplay",   "fullscreen",             global.fullscreen ? 1 : 0);
     ini_write_real("gameplay",   "digestion_timer",        global.digestion_timer_duration);
     ini_write_real("gameplay",   "game_timer",             global.game_timer_duration);
-    ini_write_real("gameplay",   "bonus_500pts_enabled",   global.bonus_500pts_enabled ? 1 : 0);
-    ini_write_real("gameplay",   "bonus_send2_enabled",    global.bonus_send2_enabled  ? 1 : 0);
-    ini_write_string("gameplay", "bonus_freq",             global.bonus_freq);
+    ini_write_real("gameplay",   "bonus_500pts_enabled",       global.bonus_500pts_enabled     ? 1 : 0);
+    ini_write_real("gameplay",   "bonus_send2_enabled",        global.bonus_send2_enabled      ? 1 : 0);
+    ini_write_real("gameplay",   "bonus_quick_shot_enabled",   global.bonus_quick_shot_enabled ? 1 : 0);
+    ini_write_real("gameplay",   "bonus_shield_enabled",       global.bonus_shield_enabled     ? 1 : 0);
+    ini_write_string("gameplay", "bonus_freq",                 global.bonus_freq);
     ini_write_real("gameplay",   "grid_lines",             global.grid_lines_count);
 
     ini_close();

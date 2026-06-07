@@ -36,8 +36,10 @@ menu_options_gameplay = [
 
 // Build bonuses submenu (ON/OFF only — frequency is global)
 menu_options_bonuses = [
-    "[spr_bonus_500pts,0] 500 pts  " + (global.bonus_500pts_enabled ? "ON" : "OFF"),
-    "[spr_bonus_send2,0] Send 2  "   + (global.bonus_send2_enabled  ? "ON" : "OFF"),
+    "[spr_bonus_500pts,0] 500 pts  "    + (global.bonus_500pts_enabled     ? "ON" : "OFF"),
+    "[spr_bonus_send2,0] Send 2  "      + (global.bonus_send2_enabled      ? "ON" : "OFF"),
+    "[spr_bonus_quick_shot,0] Quick Shot  " + (global.bonus_quick_shot_enabled ? "ON" : "OFF"),
+    "[spr_bonus_shield,0] Shield  "         + (global.bonus_shield_enabled     ? "ON" : "OFF"),
     "Back"
 ];
 

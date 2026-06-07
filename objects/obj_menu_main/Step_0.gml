@@ -155,6 +155,14 @@ else if (menu_state == "gameplay_bonuses") {
                     global.bonus_send2_enabled = !global.bonus_send2_enabled;
                     menu_options_bonuses[1] = "[spr_bonus_send2,0] Send 2  " + (global.bonus_send2_enabled ? "ON" : "OFF");
                     break;
+                case 2:
+                    global.bonus_quick_shot_enabled = !global.bonus_quick_shot_enabled;
+                    menu_options_bonuses[2] = "[spr_bonus_quick_shot,0] Quick Shot  " + (global.bonus_quick_shot_enabled ? "ON" : "OFF");
+                    break;
+                case 3:
+                    global.bonus_shield_enabled = !global.bonus_shield_enabled;
+                    menu_options_bonuses[3] = "[spr_bonus_shield,0] Shield  " + (global.bonus_shield_enabled ? "ON" : "OFF");
+                    break;
             }
             save_controls();
         }

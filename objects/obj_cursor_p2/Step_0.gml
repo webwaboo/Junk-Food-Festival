@@ -95,7 +95,8 @@ if (!using_ai) {
         }
 
         var _min_send_p2 = (global.send2_j2_timer > 0) ? 2 : 3;
-        if (send_hold_timer_p2 >= send_hold_threshold_p2 && bloc.bloc_taille >= _min_send_p2) {
+        var _threshold_p2 = (global.quick_shot_j2_timer > 0) ? 1 : send_hold_threshold_p2;
+        if (send_hold_timer_p2 >= _threshold_p2 && bloc.bloc_taille >= _min_send_p2) {
             var line_send = current_line;
             array_delete(line_send, 0, 1);
 
